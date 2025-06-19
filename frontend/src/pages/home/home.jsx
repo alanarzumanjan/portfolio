@@ -5,9 +5,13 @@ function Home() {
 
     return (
         <div className="home">
-            <h1>Hello, I'am Alan Arzumanjan and this is my portfolio website.</h1>
+
+            <img className="avatar" src="/avatar.png" alt="Avatar" />
+            <h1>Welcome to My Portfolio</h1>
+            <h2>Hello, I'am Alan Arzumanjan</h2>
             <p>
-                Feel free to explore my projects and get to know more about me, myskills and experience.
+                Feel free to explore my projects and get to know more about me,
+                myskills and experience.
             </p>
         </div>
     );
