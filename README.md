@@ -33,7 +33,6 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 
 - **Next.js (React)** — modern framework for SSR/SSG
 - **TypeScript** — strong typing for reliability
-- **Tailwind CSS** — fast, utility-first styling
 - **shadcn/ui** — beautiful UI components
 - **Framer Motion** — animations and transitions
 

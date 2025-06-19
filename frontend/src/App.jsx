@@ -1,35 +1,34 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Header from './components/header/header.jsx';
 import Footer from './components/footer/footer.jsx';
-import Home from './components/home/home.jsx';
-import { Link } from 'react-router-dom';
-import Projects from './components/projects/projects.jsx';
-import Contacts from './components/contacts/contacts.jsx';
-import About from './components/about/about.jsx';
-import Cv from './components/cv/cv.jsx';
-import Blog from './components/blog/blog.jsx';
-import Reviews from './components/reviews/reviews.jsx';
+import Home from './pages/home/home.jsx';
+import Projects from './pages/projects/projects.jsx';
+import Contacts from './pages/contacts/contacts.jsx';
+import About from './pages/about/about.jsx';
+import Cv from './pages/cv/cv.jsx';
+import Blog from './pages/blog/blog.jsx';
+import Reviews from './pages/reviews/reviews.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <routes>
-          <route path="/" element={<Home />}></route>
-          <route path="/home" element={<Home />}></route>
-          <route path="/projects" element={<Projects />}></route>
-          <route path="/contacts" element={<Contacts />}></route>
-          <route path="/about" element={<About />}></route>
-          <route path="/cv" element={<Cv />}></route>
-          <route path="/blog" element={<Blog />}></route>
-          <route path="/reviews" element={<Reviews />}></route>
-        </routes>
-      </header>
-
-      <Footer />
-
-    </div>
-
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/cv" element={<Cv />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/reviews" element={<Reviews />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
