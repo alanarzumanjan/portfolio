@@ -15,21 +15,22 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 
 ## 🌐 Site Structure
 
-| Route               | Description                                              |
-|---------------------|----------------------------------------------------------|
-| `/`                 | Home page: intro, highlights, navigation links           |
-| `/about`            | About me: skills, education, experience                  |
-| `/projects`         | List of projects with brief descriptions                 |
-| `/projects/[slug]`  | Detailed project page with screenshots and user reviews  |
-| `/contact`          | Contact form for messages                                |
-| `/cv` *(optional)*  | Interactive or downloadable CV (PDF format)              |
-| `/reviews` *(optional)* | List of user reviews for projects                     |
+| Route                   | Description                                             |
+| ----------------------- | ------------------------------------------------------- |
+| `/`                     | Home page: intro, highlights, navigation links          |
+| `/about`                | About me: skills, education, experience                 |
+| `/projects`             | List of projects with brief descriptions                |
+| `/projects/[slug]`      | Detailed project page with screenshots and user reviews |
+| `/contact`              | Contact form for messages                               |
+| `/cv` _(optional)_      | Interactive or downloadable CV (PDF format)             |
+| `/reviews` _(optional)_ | List of user reviews for projects                       |
 
 ---
 
 ## 🧱 Architecture
 
 ### 💻 Frontend
+
 - **Next.js (React)** — modern framework for SSR/SSG
 - **TypeScript** — strong typing for reliability
 - **Tailwind CSS** — fast, utility-first styling
@@ -37,6 +38,7 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 - **Framer Motion** — animations and transitions
 
 ### ⚙️ Backend
+
 - **ASP.NET Core Web API** — REST API for projects and reviews
 - **SQLite** — lightweight local database
 - **Entity Framework Core** — ORM for managing the data layer
@@ -45,12 +47,12 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 
 ## 🔄 API Endpoints
 
-| Method | Endpoint                        | Description                       |
-|--------|----------------------------------|-----------------------------------|
-| `GET`  | `/api/projects`                 | Get list of all projects          |
-| `GET`  | `/api/projects/{slug}`          | Get detailed project information  |
-| `GET`  | `/api/reviews/{projectSlug}`    | Get all reviews for a project     |
-| `POST` | `/api/reviews`                  | Submit a new review               |
+| Method | Endpoint                     | Description                      |
+| ------ | ---------------------------- | -------------------------------- |
+| `GET`  | `/api/projects`              | Get list of all projects         |
+| `GET`  | `/api/projects/{slug}`       | Get detailed project information |
+| `GET`  | `/api/reviews/{projectSlug}` | Get all reviews for a project    |
+| `POST` | `/api/reviews`               | Submit a new review              |
 
 ---
 
@@ -59,7 +61,7 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 ### 📁 Projects
 
 | Column        | Type     |
-|---------------|----------|
+| ------------- | -------- |
 | `Id`          | int      |
 | `Slug`        | string   |
 | `Title`       | string   |
@@ -72,7 +74,7 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 ### 📁 Reviews
 
 | Column        | Type     |
-|---------------|----------|
+| ------------- | -------- |
 | `Id`          | int      |
 | `ProjectSlug` | string   |
 | `Name`        | string   |
@@ -89,7 +91,13 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 cd frontend
 npm install
 npm run
+```
 
+## Backend (ASP.NET Core + SQLite)
+
+```bash
 cd backend
+dotnet restore
+dotnet ef database update
 dotnet run
 ```
