@@ -1,4 +1,7 @@
 footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #b6b6b6;
     color: white;
     text-align: center;
@@ -9,6 +12,8 @@ footer {
 footer a {
     color: white;
     text-decoration: underline;
+    transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 footer a:hover {

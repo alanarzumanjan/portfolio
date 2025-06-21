@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    /* background-color: black; */
 }
 
 .home {
@@ -43,6 +44,24 @@ p {
     max-width: 600px;
     color: #666;
     line-height: 1.6;
+}
+
+.view-projects-btn {
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.view-projects-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 @keyframes fadeIn {

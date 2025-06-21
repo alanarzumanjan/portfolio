@@ -2,3 +2,128 @@
     margin: 0;
     padding: 0;
 }
+
+.contacts {
+    max-width: 37.5rem;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contacts h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.contacts p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.contacts a {
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+.contacts img {
+    transition: transform 0.2s ease;
+}
+
+.contacts img:hover {
+    transform: scale(1.05);
+}
+
+form {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: #444;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #0077b5;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0077b5;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #005a8c;
+}
+
+.phone_icon {
+    width: 1.5rem;
+    padding-bottom: 0.7rem;
+    margin-right: 0.5rem;
+    margin-left: 5rem;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 1rem */
+}
+
+.email_icon {
+    width: 1.5rem;
+    padding-bottom: 0.7rem;
+    margin-right: 0.5rem;
+    margin-left: 2.5rem;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+}
+
+.contacts a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    /* color: #005582; */
+}
