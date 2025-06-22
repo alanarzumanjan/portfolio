@@ -120,10 +120,10 @@ button[type="submit"]:hover {
 .contacts a {
     text-decoration: none;
     transition: color 0.3s ease;
+    color: black;
 }
 
 a:hover {
     text-decoration: underline;
     cursor: pointer;
-    /* color: #005582; */
 }

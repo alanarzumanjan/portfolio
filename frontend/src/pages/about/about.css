@@ -2,3 +2,136 @@
     margin: 0;
     padding: 0;
 }
+
+.about {
+    /* max-width: 900px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 6rem;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+.about h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #222;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.3rem;
+}
+
+.about h3 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.about ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about ul li {
+    margin-bottom: 0.3rem;
+    font-size: 1.05rem;
+}
+
+.about p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.about strong {
+    color: #2c3e50;
+}
+
+.github-activity {
+    display: flex;
+    /* margin-top: 2rem; */
+    background-color: #0D1117;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    /* max-width: 37rem; */
+    color: white;
+}
+
+.react-activity-calendar__footer {
+    margin: 0;
+    padding: 0;
+}
+
+.react-activity-calendar__count {
+    background-color: #0D1117;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.github {
+    grid-column: 1 / -1;
+    max-width: 54rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 25rem;
+    margin-bottom: 5rem;
+}
+
+.github h2 {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+    /* margin-bottom: 1rem; */
+}
+
+/* .about-me {
+    padding-right: 15rem;
+}
+
+.concepts {
+    padding-left: 7rem;
+} */
+
+.contact-note {
+    grid-column: 1/-1;
+    margin-left: 20rem;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* .left-side {
+    position-try: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #0D1117;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px
+} */
+
+/* .prog-languages {
+    padding: 1rem;
+    background-color: #0D1117;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 20rem;
+} */
