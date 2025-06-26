@@ -2,3 +2,45 @@
     margin: 0;
     padding: 0;
 }
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 3rem;
+    padding-top: 2rem;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    max-width: 20rem;
+    border-radius: 8px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 20rem;
+}
+
+.project-button {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+.project-button:hover {
+    background-color: #333;
+}
