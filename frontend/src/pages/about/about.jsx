@@ -112,6 +112,7 @@ function About() {
                 <a className="cv" href={alan_cv} download>
                     <button>Download CV (PDF)</button>
                 </a>
+
             </div>
 
             <div className="contact-note">
