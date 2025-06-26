@@ -1,4 +1,3 @@
-import React from "react";
 import "./reviews.css";
 
 function Review() {

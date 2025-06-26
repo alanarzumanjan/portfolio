@@ -7,7 +7,6 @@ import Home from './pages/home/home.jsx';
 import Projects from './pages/projects/projects.jsx';
 import Contacts from './pages/contacts/contacts.jsx';
 import About from './pages/about/about.jsx';
-import Cv from './pages/cv/cv.jsx';
 import Blog from './pages/blog/blog.jsx';
 import Reviews from './pages/reviews/reviews.jsx';
 
@@ -22,7 +21,6 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/about" element={<About />} />
-          <Route path="/cv" element={<Cv />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/reviews" element={<Reviews />} />
         </Routes>

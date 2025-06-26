@@ -29,6 +29,7 @@
 .contacts a {
     display: inline-block;
     margin: 0.5rem;
+    /* width: 5rem; */
 }
 
 .contacts img {

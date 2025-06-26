@@ -1,11 +1,8 @@
-import React, { useState } from "react";
 import "./contacts.css";
 import PhoneIcon from "../../assets/phone_call.png";
 import EmailIcon from "../../assets/email.png";
 
 function Contacts() {
-
-    const [form, setForm] = useState({ name: "", email: "", message: "" })
 
     return (
         <div className="contacts">

@@ -1,15 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .about {
-    /* max-width: 900px; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 6rem;
     margin: 0 auto;
-    padding: 2rem;
     font-family: 'Segoe UI', sans-serif;
     color: #333;
     line-height: 1.7;
@@ -60,7 +53,6 @@
 
 .github-activity {
     display: flex;
-    /* margin-top: 2rem; */
     background-color: #0D1117;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -71,6 +63,7 @@
 .react-activity-calendar__footer {
     margin: 0;
     padding: 0;
+    background-color: #0D1117;
 }
 
 .react-activity-calendar__count {
@@ -88,44 +81,47 @@
     justify-content: center;
     padding-left: 25rem;
     margin-bottom: 5rem;
+    margin-top: 0rem;
+    padding-top: 0rem;
 }
 
 .github h2 {
     text-align: center;
     margin-top: 0;
     padding-top: 0;
+    border: none;
     /* margin-bottom: 1rem; */
 }
 
-/* .about-me {
-    padding-right: 15rem;
-}
-
-.concepts {
-    padding-left: 7rem;
-} */
-
 .contact-note {
+    position: absolute;
     grid-column: 1/-1;
-    margin-left: 20rem;
-    font-size: 40px;
+    margin-left: 37rem;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+    margin-top: 60rem;
+
 }
 
-/* .left-side {
-    position-try: absolute;
-    top: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #0D1117;
+.contact-note h3 {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.cv button {
+    padding: 10px 20px;
+    background-color: #333;
     color: white;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 10px
-} */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cv button:hover {
+    background-color: #555;
+}
 
 /* .prog-languages {
     padding: 1rem;
