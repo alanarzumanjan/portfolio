@@ -1,17 +1,35 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// Download database connection variables from .env
+DotNetEnv.Env.Load();
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL");
 
+// Connect EF Core + SQLite
+builder.Services.AddDbContext<AppDbContext>(options
+    => options.UseSqlite(connectionString));
+
+// Connect Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+    {
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "Portfolio API", Version = "v1" });
+    }
+);
+
+
+builder.Services.AddControllers();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Connect Sagger UI in Development
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
-
+app.MapControllers();
 app.Run();

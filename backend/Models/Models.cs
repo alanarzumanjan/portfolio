@@ -2,23 +2,26 @@ namespace Models;
 
 public class Review
 {
-    public Guid id { get; set; }
-    public Guid project_id { get; set; }
-    public string? username { get; set; }
-    public string? comment { get; set; }
-    public DateTime createdAt { get; set; }
+    public Guid Id { get; set; }
+    public Guid ProjectId { get; set; }
+    public string? Username { get; set; }
+    public string? Comment { get; set; }
+    public DateTime CreatedAt { get; set; }
+
+    public Project? Project { get; set; }
     public List<Reaction>? Reactions { get; set; }
 }
 
 public class Project
 {
-    public Guid id { get; set; }
-    public string? title { get; set; }
-    public string? description { get; set; }
-    public string? imageUrl { get; set; }
-    public string? githubUrl { get; set; }
-    public string? liveUrl { get; set; }
-    public List<Review>? reviews { get; set; }
+    public Guid Id { get; set; }
+    public string? Title { get; set; }
+    public string? Description { get; set; }
+    public string? ImageUrl { get; set; }
+    public string? GithubUrl { get; set; }
+    public string? LiveUrl { get; set; }
+
+    public List<Review>? Reviews { get; set; }
 }
 
 public class Reaction
@@ -27,4 +30,6 @@ public class Reaction
     public Guid ReviewId { get; set; }
     public string? Emoji { get; set; }
     public DateTime CreatedAt { get; set; }
+
+    public Review? Review { get; set; }
 }
