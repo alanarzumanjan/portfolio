@@ -4,13 +4,11 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Download database connection variables from .env
-DotNetEnv.Env.Load();
-var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL");
-Console.WriteLine($"DB connection: {connectionString}");
+var connectionString = DbConnection.TestDatabaseConnection();
 
 // Connect EF Core + SQLite
-builder.Services.AddDbContext<AppDbContext>(options
-    => options.UseSqlite(connectionString));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(connectionString));
 
 // Connect Swagger
 builder.Services.AddEndpointsApiExplorer();
