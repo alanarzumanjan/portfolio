@@ -3,5 +3,5 @@
 /bin
 .env
 
-# Ignore Database files
+# Ignore Database file
 Data/portfolio.db
