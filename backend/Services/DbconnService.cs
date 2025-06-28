@@ -1,6 +1,6 @@
 using DotNetEnv;
 
-public class DbConnection
+public class DbConnectionService
 {
     private static string? _cached;
 
