@@ -2,3 +2,6 @@
 /obj
 /bin
 .env
+
+# Ignore Database files
+Data/portfolio.db

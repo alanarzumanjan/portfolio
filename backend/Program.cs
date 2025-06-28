@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Download database connection variables from .env
 DotNetEnv.Env.Load();
 var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL");
+Console.WriteLine($"DB connection: {connectionString}");
 
 // Connect EF Core + SQLite
 builder.Services.AddDbContext<AppDbContext>(options
@@ -23,7 +24,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddControllers();
 var app = builder.Build();
 
-// Connect Sagger UI in Development
+// Connect Swagger UI in Development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
