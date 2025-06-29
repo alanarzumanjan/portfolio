@@ -35,7 +35,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 } // set ASPNETCORE_ENVIRONMENT=Development
 
-
 app.UseStaticFiles();
 app.MapHealthChecks("/health");
 app.UseHttpsRedirection();

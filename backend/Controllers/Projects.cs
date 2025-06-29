@@ -23,7 +23,7 @@ public class ProjectsController : ControllerBase
             .ThenInclude(r => r.Reactions)
             .ToListAsync();
 
-        var message = $"Projects list is showed";
+        var message = $"> Projects list is showed";
         Console.WriteLine(message);
         return Ok(new { message, data = projects });
     }
@@ -43,7 +43,7 @@ public class ProjectsController : ControllerBase
                 return NotFound();
             }
 
-            var message = $"Project {project.Title} is showed";
+            var message = $"> Project {project.Title} is showed";
             Console.WriteLine(message);
             return Ok(new { message, data = project });
         }
@@ -75,7 +75,7 @@ public class ProjectsController : ControllerBase
             await _db.SaveChangesAsync();
             await transaction.CommitAsync();
 
-            var message = $"Project {project.Title} is added";
+            var message = $"> Project {project.Title} is added";
             Console.WriteLine(message);
             return Ok(new { message, data = project });
         }
@@ -96,6 +96,8 @@ public class ProjectsController : ControllerBase
             if (project == null)
                 return NotFound();
 
+            var message = $"> Project {project.Title} is edited";
+
             using var transaction = await _db.Database.BeginTransactionAsync();
             if (request.Title != null) project.Title = request.Title;
             if (request.Description != null) project.Description = request.Description;
@@ -106,7 +108,6 @@ public class ProjectsController : ControllerBase
             await _db.SaveChangesAsync();
             await transaction.CommitAsync();
 
-            var message = $"Project {project.Title} is edited";
             Console.WriteLine(message);
             return Ok(new { message, data = project });
         }
@@ -132,7 +133,7 @@ public class ProjectsController : ControllerBase
             await _db.SaveChangesAsync();
             await transaction.CommitAsync();
 
-            var message = $"Project {project.Title} is deleted";
+            var message = $"> Project {project.Title} is deleted";
             Console.WriteLine(message);
             return Ok(new { message, data = project });
         }

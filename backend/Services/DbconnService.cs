@@ -49,6 +49,8 @@ public class DbConnectionService
             Console.WriteLine($"✅ Database founded: {fulldb_path}");
         }
 
+        Console.WriteLine("✅ Host started on:http://localhost:5000 and http://localhost:5000/swagger/");
+
         // Cache and return
         _cached = $"Data Source={DB_PATH}";
         return _cached;
