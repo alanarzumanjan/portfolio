@@ -22,9 +22,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddHealthChecks()
     .AddDbContextCheck<AppDbContext>();
 
-builder.Services
-    .AddControllers()
-    .AddNewtonsoftJson();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 

@@ -71,22 +71,22 @@ public class ProjectsController : ControllerBase
         return Ok(project);
     }
     [HttpPatch("{id}")]
-    public async Task<ActionResult<Project>> EditProject(Guid id, [FromBody] JsonPatchDocument<Project> request)
+    public async Task<ActionResult<Project>> PatchProject(Guid id, [FromBody] ProjectDTO request)
     {
-        if (request == null)
-            return BadRequest();
-
         var project = await _db.Projects.FindAsync(id);
 
         if (project == null)
             return NotFound();
 
-        request.ApplyTo(project, ModelState);
-
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
+        if (request.Title != null) project.Title = request.Title;
+        if (request.Description != null) project.Description = request.Description;
+        if (request.GithubUrl != null) project.GithubUrl = request.GithubUrl;
+        if (request.LiveUrl != null) project.LiveUrl = request.LiveUrl;
+        if (request.ImageUrl != null) project.ImageUrl = request.ImageUrl;
 
         await _db.SaveChangesAsync();
+
         return Ok(project);
     }
+
 }
