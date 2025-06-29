@@ -18,14 +18,22 @@ public class ProjectsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Project>>> GetProjects()
     {
-        var projects = await _db.Projects
-            .Include(p => p.Reviews)
-            .ThenInclude(r => r.Reactions)
-            .ToListAsync();
+        try
+        {
+            var projects = await _db.Projects
+             .Include(p => p.Reviews)
+             .ThenInclude(r => r.Reactions)
+             .ToListAsync();
 
-        var message = $"> Projects list is showed";
-        Console.WriteLine(message);
-        return Ok(new { message, data = projects });
+            var message = $"> Projects list is showed";
+            Console.WriteLine(message);
+            return Ok(new { message, data = projects });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Error with including project list: {ex.Message}");
+            return StatusCode(500, "Error with including project list.");
+        }
     }
 
     [HttpGet("{id}")]

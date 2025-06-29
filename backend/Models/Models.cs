@@ -29,6 +29,7 @@ public class Reaction
     public Guid Id { get; set; }
     public Guid ReviewId { get; set; }
     public string? Emoji { get; set; }
+    public int Count { get; set; } = 0;
     public DateTime CreatedAt { get; set; }
 
     public Review Review { get; set; } = new();

@@ -24,7 +24,7 @@ builder.Services.AddHealthChecks()
 
 builder.Services.AddControllers();
 
-builder.Logging.ClearProviders(); // Clear Logs
+// builder.Logging.ClearProviders(); // Clear Logs
 
 var app = builder.Build();
 
