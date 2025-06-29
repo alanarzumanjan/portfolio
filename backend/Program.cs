@@ -32,6 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles();
 app.MapHealthChecks("/health");
 app.UseHttpsRedirection();
 app.MapControllers();

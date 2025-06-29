@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using Models;
 
 namespace Controllers;
@@ -49,10 +50,24 @@ public class ProjectsController : ControllerBase
         }
     }
 
-    // [HttpPost]
-    // public async Task<ActionResult<Project>> AddProject()
-    // {
+    [HttpPost]
+    public async Task<ActionResult<Project>> AddProject([FromBody] ProjectDTO request)
+    {
+        var project = new Project
+        {
+            Id = Guid.NewGuid(),
+            Title = request.Title,
+            Description = request.Description,
+            ImageUrl = request.ImageUrl,
+            GithubUrl = request.GithubUrl,
+            LiveUrl = request.LiveUrl,
+            Reviews = new List<Review>()
+        };
 
-    // }
+        _db.Projects.Add(project);
+        await _db.SaveChangesAsync();
+
+        return Ok();
+    }
 
 }
