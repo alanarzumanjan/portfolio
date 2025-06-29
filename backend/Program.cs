@@ -23,6 +23,9 @@ builder.Services.AddHealthChecks()
     .AddDbContextCheck<AppDbContext>();
 
 builder.Services.AddControllers();
+
+builder.Logging.ClearProviders(); // Clear Logs
+
 var app = builder.Build();
 
 // Connect Swagger UI in Development
@@ -30,8 +33,9 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+} // set ASPNETCORE_ENVIRONMENT=Development
 
+app.UseStaticFiles();
 app.MapHealthChecks("/health");
 app.UseHttpsRedirection();
 app.MapControllers();

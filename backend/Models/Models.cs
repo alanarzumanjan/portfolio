@@ -21,7 +21,7 @@ public class Project
     public string? GithubUrl { get; set; }
     public string? LiveUrl { get; set; }
 
-    public List<Review>? Reviews { get; set; }
+    public List<Review> Reviews { get; set; } = new();
 }
 
 public class Reaction
@@ -31,5 +31,5 @@ public class Reaction
     public string? Emoji { get; set; }
     public DateTime CreatedAt { get; set; }
 
-    public Review? Review { get; set; }
+    public Review Review { get; set; } = new();
 }
