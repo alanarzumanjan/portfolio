@@ -49,7 +49,27 @@ public class ReviewsController : ControllerBase
         }
     }
 
-    [HttpPatch("{review_id}")]
+    [HttpGet]
+    public async Task<ActionResult<List<Review>>> GetReviews()
+    {
+        try
+        {
+            var reviews = await _db.Reviews
+                .Include(r => r.Reactions)
+                .ToListAsync();
+
+            var message = $"> Reviews list is showed";
+            Console.WriteLine(message);
+            return Ok(new { message, data = reviews });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Failed to including review list: {ex.Message}");
+            return StatusCode(500, "Failed to including review list.");
+        }
+    }
+
+    [HttpPatch("{id}")]
     public async Task<ActionResult<Review>> EditReview(Guid review_id, [FromBody] ReviewDTO request)
     {
         try
@@ -73,26 +93,6 @@ public class ReviewsController : ControllerBase
         {
             Console.WriteLine($"❌ Failed to edit review: {ex.Message}");
             return StatusCode(500, "Failed to edit review.");
-        }
-    }
-
-    [HttpGet]
-    public async Task<ActionResult<List<Review>>> GetReviews()
-    {
-        try
-        {
-            var reviews = await _db.Reviews
-                .Include(r => r.Reactions)
-                .ToListAsync();
-
-            var message = $"> Reviews list is showed";
-            Console.WriteLine(message);
-            return Ok(new { message, data = reviews });
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"❌ Failed to including review list: {ex.Message}");
-            return StatusCode(500, "Failed to including review list.");
         }
     }
 

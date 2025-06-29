@@ -21,7 +21,7 @@ public class Project
     public string? GithubUrl { get; set; }
     public string? LiveUrl { get; set; }
 
-    public List<Review> Reviews { get; set; } = new();
+    public List<Review>? Reviews { get; set; }
 }
 
 public class Reaction
@@ -32,5 +32,5 @@ public class Reaction
     public int Count { get; set; } = 0;
     public DateTime CreatedAt { get; set; }
 
-    public Review Review { get; set; } = new();
+    public Review? Review { get; set; }
 }

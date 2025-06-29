@@ -15,53 +15,6 @@ public class ProjectsController : ControllerBase
         this._db = db;
     }
 
-    [HttpGet]
-    public async Task<ActionResult<List<Project>>> GetProjects()
-    {
-        try
-        {
-            var projects = await _db.Projects
-             .Include(p => p.Reviews)
-             .ThenInclude(r => r.Reactions)
-             .ToListAsync();
-
-            var message = $"> Projects list is showed";
-            Console.WriteLine(message);
-            return Ok(new { message, data = projects });
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"❌ Error with including project list: {ex.Message}");
-            return StatusCode(500, "Error with including project list.");
-        }
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Project>> GetProjectById(Guid id)
-    {
-        try
-        {
-            var project = await _db.Projects
-                .Include(p => p.Reviews)
-                .ThenInclude(r => r.Reactions)
-                .FirstOrDefaultAsync(p => p.Id == id);
-
-            if (project == null)
-            {
-                return NotFound();
-            }
-
-            var message = $"> Project {project.Title} is showed";
-            Console.WriteLine(message);
-            return Ok(new { message, data = project });
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"❌ Error with including project: {ex.Message}");
-            return StatusCode(500, "Error with including project.");
-        }
-    }
-
     [HttpPost]
     public async Task<ActionResult<Project>> AddProject([FromBody] ProjectDTO request)
     {
@@ -123,6 +76,53 @@ public class ProjectsController : ControllerBase
         {
             Console.WriteLine($"❌ Failed to edit project: {ex.Message}");
             return StatusCode(500, "Failed to edit project.");
+        }
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<List<Project>>> GetProjects()
+    {
+        try
+        {
+            var projects = await _db.Projects
+             .Include(p => p.Reviews)
+             .ThenInclude(r => r.Reactions)
+             .ToListAsync();
+
+            var message = $"> Projects list is showed";
+            Console.WriteLine(message);
+            return Ok(new { message, data = projects });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Error with including project list: {ex.Message}");
+            return StatusCode(500, "Error with including project list.");
+        }
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Project>> GetProjectById(Guid id)
+    {
+        try
+        {
+            var project = await _db.Projects
+                .Include(p => p.Reviews)
+                .ThenInclude(r => r.Reactions)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (project == null)
+            {
+                return NotFound();
+            }
+
+            var message = $"> Project {project.Title} is showed";
+            Console.WriteLine(message);
+            return Ok(new { message, data = project });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Error with including project: {ex.Message}");
+            return StatusCode(500, "Error with including project.");
         }
     }
 
