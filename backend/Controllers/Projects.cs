@@ -89,4 +89,17 @@ public class ProjectsController : ControllerBase
         return Ok(project);
     }
 
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<Project>> DeleteProject(Guid id)
+    {
+        var project = await _db.Projects.FindAsync(id);
+
+        if (project == null)
+            return NotFound();
+
+        _db.Projects.Remove(project);
+
+        await _db.SaveChangesAsync();
+        return Ok(project);
+    }
 }
