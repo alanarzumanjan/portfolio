@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
@@ -67,7 +68,25 @@ public class ProjectsController : ControllerBase
         _db.Projects.Add(project);
         await _db.SaveChangesAsync();
 
-        return Ok();
+        return Ok(project);
     }
+    [HttpPatch("{id}")]
+    public async Task<ActionResult<Project>> EditProject(Guid id, [FromBody] JsonPatchDocument<Project> request)
+    {
+        if (request == null)
+            return BadRequest();
 
+        var project = await _db.Projects.FindAsync(id);
+
+        if (project == null)
+            return NotFound();
+
+        request.ApplyTo(project, ModelState);
+
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        await _db.SaveChangesAsync();
+        return Ok(project);
+    }
 }
