@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using MailKit.Net.Smtp;
@@ -11,6 +12,13 @@ public class ContactsController : ControllerBase
     {
         try
         {
+            var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            if (!string.IsNullOrEmpty(form.Email) && !Regex.IsMatch(form.Email, emailPattern))
+            {
+                Console.WriteLine($"Contacts email send: Invalid email format {form.Email}");
+                return BadRequest("Invalid email format.");
+            }
+
             var emailEnv = Environment.GetEnvironmentVariable("EMAIL_ADDRESS");
             var passwordEnv = Environment.GetEnvironmentVariable("EMAIL_PASSWORD");
             var nameEnv = Environment.GetEnvironmentVariable("EMAIL_NAME");
