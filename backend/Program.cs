@@ -41,7 +41,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-
 var app = builder.Build();
 
 // Connect Swagger UI in Development
