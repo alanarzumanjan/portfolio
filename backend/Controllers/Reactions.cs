@@ -30,6 +30,9 @@ public class ReactionsController : ControllerBase
             var reaction = review.Reactions?
                 .FirstOrDefault(r => r.Emoji == request.Emoji);
 
+            if (string.IsNullOrWhiteSpace(request.Emoji) || request.Emoji.Length > 2)
+                return BadRequest("Invalid emoji");
+
             if (reaction != null)
             {
                 reaction.Count += 1;
@@ -60,16 +63,15 @@ public class ReactionsController : ControllerBase
                 return Ok(new
                 {
                     message,
-                    data = new
+                    data = new ReactionResponseDTO
                     {
-                        newReaction.Id,
-                        newReaction.Emoji,
-                        newReaction.Count,
-                        newReaction.CreatedAt
+                        Id = newReaction.Id,
+                        Emoji = newReaction.Emoji,
+                        Count = newReaction.Count,
+                        CreatedAt = newReaction.CreatedAt
                     }
                 });
             }
-
         }
         catch (Exception ex)
         {

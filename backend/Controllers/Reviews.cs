@@ -40,7 +40,20 @@ public class ReviewsController : ControllerBase
 
             var message = $"> Review '{newReview.Comment}' on {project.Title} is added";
             Console.WriteLine(message);
-            return Ok(new { message, data = review });
+            return Ok(new
+            {
+                message,
+                data = new ReviewResponseDTO
+                {
+                    Id = newReview.Id,
+                    ProjectId = newReview.ProjectId,
+                    Username = newReview.Username,
+                    Comment = newReview.Comment,
+                    CreatedAt = newReview.CreatedAt,
+                    Reactions = new List<ReactionResponseDTO>()
+                }
+            });
+
         }
         catch (Exception ex)
         {
@@ -50,7 +63,7 @@ public class ReviewsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<Review>>> GetReviews()
+    public async Task<ActionResult<List<ReviewResponseDTO>>> GetReviews()
     {
         try
         {
@@ -58,23 +71,40 @@ public class ReviewsController : ControllerBase
                 .Include(r => r.Reactions)
                 .ToListAsync();
 
+            var result = reviews.Select(r => new ReviewResponseDTO
+            {
+                Id = r.Id,
+                ProjectId = r.ProjectId,
+                Username = r.Username,
+                Comment = r.Comment,
+                CreatedAt = r.CreatedAt,
+                Reactions = r.Reactions?.Select(re => new ReactionResponseDTO
+                {
+                    Id = re.Id,
+                    Emoji = re.Emoji,
+                    Count = re.Count,
+                    CreatedAt = re.CreatedAt
+                }).ToList()
+            }).ToList();
+
             var message = $"> Reviews list is showed";
             Console.WriteLine(message);
-            return Ok(new { message, data = reviews });
+            return Ok(new { message, data = result });
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"❌ Failed to including review list: {ex.Message}");
-            return StatusCode(500, "Failed to including review list.");
+            Console.WriteLine($"❌ Failed to include review list: {ex.Message}");
+            return StatusCode(500, "Failed to include review list.");
         }
     }
 
+
     [HttpPatch("{id}")]
-    public async Task<ActionResult<Review>> EditReview(Guid review_id, [FromBody] ReviewDTO request)
+    public async Task<ActionResult<Review>> EditReview(Guid id, [FromBody] ReviewDTO request)
     {
         try
         {
-            var review = await _db.Reviews.FindAsync(review_id);
+            var review = await _db.Reviews.FindAsync(id);
             if (review == null)
                 return NotFound();
 
@@ -97,24 +127,44 @@ public class ReviewsController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Review>> GetReviewById(Guid id)
+    public async Task<ActionResult<ReviewResponseDTO>> GetReviewById(Guid id)
     {
         try
         {
-            var review = await _db.Reviews.FindAsync(id);
+            var review = await _db.Reviews
+                .Include(r => r.Reactions)
+                .FirstOrDefaultAsync(r => r.Id == id);
+
             if (review == null)
                 return NotFound();
 
+            var result = new ReviewResponseDTO
+            {
+                Id = review.Id,
+                ProjectId = review.ProjectId,
+                Username = review.Username,
+                Comment = review.Comment,
+                CreatedAt = review.CreatedAt,
+                Reactions = review.Reactions?.Select(re => new ReactionResponseDTO
+                {
+                    Id = re.Id,
+                    Emoji = re.Emoji,
+                    Count = re.Count,
+                    CreatedAt = re.CreatedAt
+                }).ToList()
+            };
+
             var message = $"> Review {review.Id} is showed";
             Console.WriteLine(message);
-            return Ok(new { message, data = review });
+            return Ok(new { message, data = result });
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"❌ Failed to including review: {ex.Message}");
-            return StatusCode(500, "Failed to including review.");
+            Console.WriteLine($"❌ Failed to get review: {ex.Message}");
+            return StatusCode(500, "Failed to get review.");
         }
     }
+
 
     [HttpDelete("{id}")]
     public async Task<ActionResult<Review>> DeleteReviewById(Guid id)

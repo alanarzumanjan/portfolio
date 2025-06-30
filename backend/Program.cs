@@ -1,4 +1,3 @@
-using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -23,9 +22,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddHealthChecks()
     .AddDbContextCheck<AppDbContext>();
 
-builder.Services.AddControllers()
-    .AddJsonOptions(x =>
-        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+builder.Services.AddControllers();
 
 // builder.Logging.ClearProviders(); // Clear Logs
 
@@ -36,10 +33,9 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-} // set ASPNETCORE_ENVIRONMENT=Development
+} // $env:ASPNETCORE_ENVIRONMENT = "Development"
 
 app.UseStaticFiles();
 app.MapHealthChecks("/health");
-app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
