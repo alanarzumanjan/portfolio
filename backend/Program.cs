@@ -28,6 +28,19 @@ builder.Services.AddHealthChecks()
 builder.Services.AddControllers();
 
 // builder.Logging.ClearProviders(); // Clear Logs
+var frontendOrigin = Environment.GetEnvironmentVariable("ALLOWED_FRONTEND_PORT") ?? "https://localhost:3000";
+
+// CORS for Frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("FrontendOnly", builder =>
+    {
+        builder.WithOrigins(frontendOrigin)
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -38,6 +51,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 } // for swagger acces: $env:ASPNETCORE_ENVIRONMENT = "Development"
+
+// Apply CORS based on environment
+if (app.Environment.IsDevelopment())
+{
+    app.UseCors(policy =>
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+}
+else
+{
+    app.UseCors("FrontendOnly");
+}
+
 
 app.UseStaticFiles();
 app.MapHealthChecks("/health");
