@@ -1,5 +1,8 @@
+using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+
+Console.OutputEncoding = Encoding.UTF8;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,9 +34,10 @@ var app = builder.Build();
 // Connect Swagger UI in Development
 if (app.Environment.IsDevelopment())
 {
+    app.UseMiddleware<SwaggerAuth>();
     app.UseSwagger();
     app.UseSwaggerUI();
-} // $env:ASPNETCORE_ENVIRONMENT = "Development"
+} // for swagger acces: $env:ASPNETCORE_ENVIRONMENT = "Development"
 
 app.UseStaticFiles();
 app.MapHealthChecks("/health");
