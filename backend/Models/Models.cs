@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Models;
 
 public class Review
@@ -20,8 +22,8 @@ public class Project
     public string? ImageUrl { get; set; }
     public string? GithubUrl { get; set; }
     public string? LiveUrl { get; set; }
-
-    public List<Review>? Reviews { get; set; }
+    [JsonIgnore]
+    public List<Review> Reviews { get; set; } = new();
 }
 
 public class Reaction
@@ -31,6 +33,6 @@ public class Reaction
     public string? Emoji { get; set; }
     public int Count { get; set; } = 0;
     public DateTime CreatedAt { get; set; }
-
+    [JsonIgnore]
     public Review? Review { get; set; }
 }
