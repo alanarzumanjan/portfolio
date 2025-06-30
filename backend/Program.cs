@@ -1,6 +1,7 @@
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using AspNetCoreRateLimit;
 
 Console.OutputEncoding = Encoding.UTF8;
 
@@ -13,8 +14,17 @@ var connectionString = DbConnectionService.TestDatabaseConnection();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(connectionString));
 
-// Connect Swagger
+// IP Connection Limiting
+builder.Services.AddMemoryCache();
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+builder.Services.AddInMemoryRateLimiting();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 builder.Services.AddEndpointsApiExplorer();
+// Loging
+builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+
+// Connect Swagger
 builder.Services.AddSwaggerGen(c =>
     {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "Portfolio API", Version = "v1" });
@@ -62,7 +72,17 @@ else
     app.UseCors("FrontendOnly");
 }
 
+app.UseIpRateLimiting();
+app.Use(async (context, next) =>
+{
+    await next();
 
+    if (context.Response.StatusCode == 429)
+    {
+        await context.Response.WriteAsync("Rate limit exceeded. Please wait a 10 minute.");
+        Console.WriteLine("User: Rate limit exceeded. Please wait a 10 minute.");
+    }
+});
 app.UseStaticFiles();
 app.MapHealthChecks("/health");
 app.MapControllers();

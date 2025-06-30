@@ -13,7 +13,7 @@ public class ContactsController : ControllerBase
         try
         {
             var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            if (!Regex.IsMatch(form.Email, emailPattern))
+            if (!string.IsNullOrEmpty(form.Email) && !Regex.IsMatch(form.Email, emailPattern))
             {
                 Console.WriteLine($"Contacts email send: Invalid email format {form.Email}");
                 return BadRequest("Invalid email format.");
