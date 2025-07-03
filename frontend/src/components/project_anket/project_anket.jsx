@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 import "./project_anket.css";
 
 function ProjectAnket() {
     const { id } = useParams();
     const [project, setProject] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [readme, setReadme] = useState(null);
+    // const [readme, setReadme] = useState(null);
 
     useEffect(() => {
         const fetchProject = async () => {
@@ -16,13 +16,13 @@ function ProjectAnket() {
                 const result = await response.json();
                 setProject(result?.data);
 
-                const readmeRes = await fetch(`http://localhost:5000/projects/${id}/readme`);
-                if (readmeRes.ok) {
-                    const readmeJson = await readmeRes.json();
-                    setReadme(readmeJson.content);
-                } else {
-                    setReadme("README not found.");
-                }
+                // const readmeRes = await fetch(`http://localhost:5000/projects/${id}/readme`);
+                // if (readmeRes.ok) {
+                //     const readmeJson = await readmeRes.json();
+                //     setReadme(readmeJson.content);
+                // } else {
+                //     setReadme("README not found.");
+                // }
             } catch (err) {
                 console.error("Error loading project:", err);
             } finally {
