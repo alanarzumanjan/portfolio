@@ -7,7 +7,6 @@ import Home from './pages/home/home.jsx';
 import Projects from './pages/projects/projects.jsx';
 import Contacts from './pages/contacts/contacts.jsx';
 import About from './pages/about/about.jsx';
-import Reviews from './pages/reviews/reviews.jsx';
 import ProjectAnket from "./components/project_anket/project_anket.jsx";
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
           <Route path="/projects/:id" element={<ProjectAnket />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/about" element={<About />} />
-          <Route path="/reviews" element={<Reviews />} />
         </Routes>
         <Footer />
       </div>

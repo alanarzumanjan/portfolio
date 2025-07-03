@@ -3,8 +3,8 @@
     margin: 3rem auto;
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     gap: 2rem;
-    align-items: flex-start;
     background: #fff;
     border-radius: 1.5rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -12,7 +12,13 @@
     animation: fadeIn 0.8s ease;
 }
 
-.project-details img {
+.project-header {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.project-header img {
     width: 45%;
     border-radius: 1rem;
     object-fit: cover;
@@ -39,15 +45,9 @@
     margin-bottom: 2rem;
 }
 
-.project:hover {
-    box-shadow:
-        0 12px 32px rgba(0, 0, 0, 0.08),
-        0 0 24px rgba(79, 70, 229, 0.12);
-}
-
 .project-buttons {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: 1rem;
     flex-wrap: wrap;
 }
@@ -61,39 +61,42 @@
     font-weight: 500;
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-right: 1rem;
 }
 
 .project-button:hover {
     background-color: #333;
     transform: translateY(-2px);
-    /* box-shadow:
-        0 0 0 4px rgba(79, 70, 229, 0.1),
-        0 8px 24px rgba(79, 70, 229, 0.3),
-        0 0 24px rgba(79, 70, 229, 0.25); */
 }
 
-/* .readme-content {
-    margin-top: 1.5rem;
+.project-reviews {
+    margin-top: 2rem;
     padding: 1rem;
-    background-color: #f9f9f9;
+    background-color: #f3f3f3;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    line-height: 1.6;
+    font-size: 1rem;
+    max-width: 1000px;
+    width: 100%;
+    margin: 2rem auto 0 auto;
 }
 
-.readme-content h1,
-.readme-content h2,
-.readme-content h3 {
-    margin-top: 1rem;
-    font-weight: 600;
+.review-item {
+    border-bottom: 1px solid #ddd;
+    padding: 0.8rem 0;
 }
 
-.readme-content pre {
-    background: #eee;
-    padding: 1rem;
-    border-radius: 4px;
-    overflow-x: auto;
-} */
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-item p {
+    margin: 0.2rem 0;
+}
+
+.review-item small {
+    color: #666;
+    font-size: 0.85rem;
+}
 
 @keyframes fadeIn {
     from {

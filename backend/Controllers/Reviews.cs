@@ -165,6 +165,42 @@ public class ReviewsController : ControllerBase
         }
     }
 
+    [HttpGet("project/{projectId}")]
+    public async Task<ActionResult<List<ReviewResponseDTO>>> GetReviewsByProjectId(Guid projectId)
+    {
+        try
+        {
+            var reviews = await _db.Reviews
+                .Where(r => r.ProjectId == projectId)
+                .Include(r => r.Reactions)
+                .ToListAsync();
+
+            var result = reviews.Select(r => new ReviewResponseDTO
+            {
+                Id = r.Id,
+                ProjectId = r.ProjectId,
+                Username = r.Username,
+                Comment = r.Comment,
+                CreatedAt = r.CreatedAt,
+                Reactions = r.Reactions?.Select(re => new ReactionResponseDTO
+                {
+                    Id = re.Id,
+                    Emoji = re.Emoji,
+                    Count = re.Count,
+                    CreatedAt = re.CreatedAt
+                }).ToList()
+            }).ToList();
+
+            var message = $"> Reviews for project {projectId} are returned";
+            Console.WriteLine(message);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Failed to get project reviews: {ex.Message}");
+            return StatusCode(500, "Failed to get project reviews.");
+        }
+    }
 
     [HttpDelete("{id}")]
     public async Task<ActionResult<Review>> DeleteReviewById(Guid id)
