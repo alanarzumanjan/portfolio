@@ -139,49 +139,42 @@ function ProjectAnket() {
                     <div key={review.id} className="review-item">
                         <p><strong>{review.username}</strong>:</p>
                         <p>{review.comment}</p>
-                        {review.reactions && review.reactions.length > 0 && (
-                            <div className="review-reactions">
-                                {review.reactions.map((reaction) => (
-                                    <button
-                                        key={reaction.id}
-                                        className="reaction-btn"
-                                        onClick={() => handleReact(review.id, reaction.emoji)}
-                                    >
-                                        {reaction.emoji} {reaction.count}
-                                    </button>
-                                ))}
+
+                        <div className="review-reactions">
+                            {review.reactions?.map((reaction) => (
+                                <button key={reaction.id} className="reaction-btn"
+                                    onClick={() => handleReact(review.id, reaction.emoji)}>
+                                    {reaction.emoji} {reaction.count}
+                                </button>
+                            ))}
+
+                            <div className="reaction-dropdown-click">
+                                <button
+                                    className="reaction-trigger"
+                                    onClick={() =>
+                                        setOpenReactionMenuId(
+                                            openReactionMenuId === review.id ? null : review.id
+                                        )
+                                    } > +
+                                </button>
+
+                                {openReactionMenuId === review.id && (
+                                    <div className="reaction-options-click">
+                                        {["👍", "❤️", "😂", "🔥"].map((emoji) => (
+                                            <button
+                                                key={emoji}
+                                                className="reaction-btn"
+                                                onClick={() => {
+                                                    handleReact(review.id, emoji);
+                                                    setOpenReactionMenuId(null);
+                                                }}
+                                            >
+                                                {emoji}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
-                        )}
-
-                        <div className="reaction-dropdown-click">
-                            <button
-                                className="reaction-trigger"
-                                onClick={() =>
-                                    setOpenReactionMenuId(
-                                        openReactionMenuId === review.id ? null : review.id
-                                    )
-                                }
-                            >
-                                +
-                            </button>
-
-                            {openReactionMenuId === review.id && (
-                                <div className="reaction-options-click">
-                                    {["👍", "❤️", "😂", "🔥"].map((emoji) => (
-                                        <button
-                                            key={emoji}
-                                            className="reaction-btn"
-                                            onClick={() => {
-                                                handleReact(review.id, emoji);
-                                                setOpenReactionMenuId(null);
-                                            }}
-                                        >
-                                            {emoji}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-
                         </div>
 
                         <small>{new Date(review.createdAt).toLocaleString()}</small>
