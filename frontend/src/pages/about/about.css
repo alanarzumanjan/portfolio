@@ -8,6 +8,7 @@
     line-height: 1.7;
 }
 
+
 .about h1 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
@@ -45,6 +46,24 @@
     margin-bottom: 1rem;
     font-size: 1.1rem;
     color: #444;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    /* margin-left: 5rem; */
+}
+
+/* P containers */
+
+.p-conteiner1 {
+    margin-left: 5rem;
+}
+
+.p-conteiner2 {
+    margin-right: 5rem;
+}
+
+.p-conteiner3 {
+    margin-left: 5rem;
 }
 
 .about strong {
@@ -96,7 +115,7 @@
 .contact-note {
     position: absolute;
     grid-column: 1/-1;
-    margin-left: 37rem;
+    /* margin-left: 37rem; */
     text-align: center;
     font-weight: bold;
     margin-bottom: 0rem;
@@ -123,11 +142,65 @@
     background-color: #555;
 }
 
-/* .prog-languages {
+.prog-languages {
     padding: 1rem;
-    background-color: #0D1117;
-    color: white;
-    text-align: center;
+    /* background-color: #0D1117; */
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* text-align: center; */
     border-radius: 10px;
     max-width: 20rem;
-} */
+    float: right;
+}
+
+.web {
+    margin-top: 10rem;
+    margin-right: 10rem;
+    padding: 1rem;
+    /* background-color: #0D1117; */
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* text-align: center; */
+    border-radius: 10px;
+    max-width: 20rem;
+}
+
+.databases {
+    margin-top: -4rem;
+    padding: 1rem;
+    /* background-color: #0D1117; */
+    /* text-align: center; */
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    max-width: 20rem;
+    /* min-width: 18rem; */
+    float: right;
+    margin-right: 8rem;
+}
+
+.tools {
+    margin-top: 5rem;
+    margin-right: 10rem;
+    padding: 1rem;
+    /* background-color: #0D1117; */
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* text-align: center; */
+    border-radius: 10px;
+    max-width: 20rem;
+}
+
+.languages {
+    margin-top: -12rem;
+    padding: 1rem;
+    /* background-color: #0D1117; */
+    /* background-color: darkgray; */
+    /* background: #ffffff; */
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* text-align: center; */
+    border-radius: 10px;
+    max-width: 20rem;
+    float: right;
+    /* margin-left: 6rem; */
+}

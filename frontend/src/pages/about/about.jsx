@@ -59,19 +59,19 @@ function About() {
                 <div className="about-me">
                     <h2>About Me</h2>
 
-                    <p>
+                    <p className='p-conteiner1'>
                         My name is Alan Arzumanjan, and I’m an aspiring developer
                         currently studying at the Victoria Vocational High School in Riga,
                         Latvia, in the IT department. Arch Linux and Windows as my primary
                         operating systems.
                     </p>
-                    <p>
+                    <p className='p-conteiner2'>
                         I’m passionate about software development and eager to grow
                         professionally in this field. I enjoy solving complex problems,
                         writing clean and readable code, and crafting intuitive user
                         interfaces.
                     </p>
-                    <p>
+                    <p className='p-conteiner3'>
                         I’m a fast learner, a great team player, and always see tasks
                         through to the end. My goal is to gain hands-on experience,
                         contribute to real-world projects, master modern technologies, and
