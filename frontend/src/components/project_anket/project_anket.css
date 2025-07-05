@@ -207,6 +207,75 @@
     transform: scale(1.1);
 }
 
+.review-reactions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.reaction-btn {
+    border: none;
+    background: #eee;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.reaction-btn:hover {
+    background-color: #ddd;
+}
+
+.reaction-picker {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.4rem;
+}
+
+.reaction-btn {
+    transition: transform 0.1s ease;
+}
+
+.reaction-btn:active {
+    transform: scale(1.2);
+}
+
+.reaction-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.reaction-dropdown-click {
+    position: relative;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.reaction-trigger {
+    background-color: #eee;
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.reaction-options-click {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background-color: #fff;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: flex;
+    gap: 0.4rem;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

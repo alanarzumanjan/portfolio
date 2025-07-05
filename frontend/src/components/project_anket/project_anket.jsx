@@ -10,6 +10,7 @@ function ProjectAnket() {
     const [username, setUsername] = useState("");
     const [comment, setComment] = useState("");
     const [showForm, setShowForm] = useState(false);
+    const [openReactionMenuId, setOpenReactionMenuId] = useState(null);
 
     useEffect(() => {
         const fetchProject = async () => {
@@ -54,6 +55,61 @@ function ProjectAnket() {
         }
     };
 
+    const handleReact = async (reviewId, emoji) => {
+        const reactedKey = `reacted_${reviewId}_${emoji}`;
+        if (localStorage.getItem(reactedKey)) return;
+
+        try {
+            const res = await fetch(`http://localhost:5000/reactions/${reviewId}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ emoji }),
+            });
+
+            const result = await res.json();
+
+            if (res.ok && result.data) {
+                localStorage.setItem(reactedKey, "1");
+
+                const newReaction = result.data;
+
+                setReviews((prev) =>
+                    prev.map((review) => {
+                        if (review.id !== reviewId) return review;
+
+                        const existing = review.reactions?.find((r) => r.emoji === emoji);
+                        if (existing) {
+                            return {
+                                ...review,
+                                reactions: review.reactions.map((r) =>
+                                    r.emoji === emoji ? { ...r, count: newReaction.count } : r
+                                ),
+                            };
+                        } else {
+                            return {
+                                ...review,
+                                reactions: [...(review.reactions || []), newReaction],
+                            };
+                        }
+                    })
+                );
+            }
+        } catch (err) {
+            console.error("Failed to react:", err);
+        }
+    };
+
+
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+            if (!e.target.closest(".reaction-dropdown-click")) {
+                setOpenReactionMenuId(null);
+            }
+        };
+        document.addEventListener("click", handleOutsideClick);
+        return () => document.removeEventListener("click", handleOutsideClick);
+    }, []);
+
     if (loading) return <p>Loading...</p>;
     if (!project) return <p>Project not found.</p>;
 
@@ -83,6 +139,51 @@ function ProjectAnket() {
                     <div key={review.id} className="review-item">
                         <p><strong>{review.username}</strong>:</p>
                         <p>{review.comment}</p>
+                        {review.reactions && review.reactions.length > 0 && (
+                            <div className="review-reactions">
+                                {review.reactions.map((reaction) => (
+                                    <button
+                                        key={reaction.id}
+                                        className="reaction-btn"
+                                        onClick={() => handleReact(review.id, reaction.emoji)}
+                                    >
+                                        {reaction.emoji} {reaction.count}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+
+                        <div className="reaction-dropdown-click">
+                            <button
+                                className="reaction-trigger"
+                                onClick={() =>
+                                    setOpenReactionMenuId(
+                                        openReactionMenuId === review.id ? null : review.id
+                                    )
+                                }
+                            >
+                                +
+                            </button>
+
+                            {openReactionMenuId === review.id && (
+                                <div className="reaction-options-click">
+                                    {["👍", "❤️", "😂", "🔥"].map((emoji) => (
+                                        <button
+                                            key={emoji}
+                                            className="reaction-btn"
+                                            onClick={() => {
+                                                handleReact(review.id, emoji);
+                                                setOpenReactionMenuId(null);
+                                            }}
+                                        >
+                                            {emoji}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+
+                        </div>
+
                         <small>{new Date(review.createdAt).toLocaleString()}</small>
                     </div>
                 ))}
