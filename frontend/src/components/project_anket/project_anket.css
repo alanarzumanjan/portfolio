@@ -70,14 +70,13 @@
 }
 
 .project-reviews {
-    margin-top: 2rem;
     padding: 1rem;
     background-color: #f3f3f3;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     font-size: 0.5rem;
     max-width: 46rem;
     width: 100%;
-    margin: 10rem auto 0 auto;
+    margin: 15rem auto 0 auto;
 }
 
 .review-item {
@@ -210,6 +209,7 @@
 .review-reactions {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
     margin-top: 0.5rem;
 }
 
@@ -249,7 +249,7 @@
 .reaction-dropdown-click {
     position: relative;
     display: inline-block;
-    margin-top: 0.5rem;
+    margin-top: 0rem;
 }
 
 .reaction-trigger {
