@@ -146,8 +146,32 @@
     overflow-wrap: break-word !important;
 }
 
+.category-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
 
-/* Animations */
+.category-buttons button {
+    background-color: #eee;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+}
+
+.category-buttons button:hover {
+    background-color: #ddd;
+}
+
+.category-buttons .active {
+    background-color: #000;
+    color: #fff;
+}
+
 @keyframes fadeInDown {
     from {
         opacity: 0;

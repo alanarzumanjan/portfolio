@@ -80,7 +80,7 @@ textarea:focus {
 button[type="submit"] {
     width: 100%;
     padding: 0.75rem;
-    background-color: #0077b5;
+    background-color: #000000;
     color: white;
     font-weight: bold;
     border: none;
@@ -90,7 +90,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #005a8c;
+    background-color: #888;
 }
 
 .phone_icon {
