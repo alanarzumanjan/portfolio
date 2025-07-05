@@ -3,8 +3,8 @@
     margin: 3rem auto;
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     gap: 2rem;
-    align-items: flex-start;
     background: #fff;
     border-radius: 1.5rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -12,7 +12,13 @@
     animation: fadeIn 0.8s ease;
 }
 
-.project-details img {
+.project-header {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.project-header img {
     width: 45%;
     border-radius: 1rem;
     object-fit: cover;
@@ -39,15 +45,9 @@
     margin-bottom: 2rem;
 }
 
-.project:hover {
-    box-shadow:
-        0 12px 32px rgba(0, 0, 0, 0.08),
-        0 0 24px rgba(79, 70, 229, 0.12);
-}
-
 .project-buttons {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: 1rem;
     flex-wrap: wrap;
 }
@@ -61,39 +61,151 @@
     font-weight: 500;
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-right: 1rem;
 }
 
 .project-button:hover {
     background-color: #333;
     transform: translateY(-2px);
-    /* box-shadow:
-        0 0 0 4px rgba(79, 70, 229, 0.1),
-        0 8px 24px rgba(79, 70, 229, 0.3),
-        0 0 24px rgba(79, 70, 229, 0.25); */
 }
 
-/* .readme-content {
-    margin-top: 1.5rem;
+.project-reviews {
+    margin-top: 2rem;
     padding: 1rem;
-    background-color: #f9f9f9;
+    background-color: #f3f3f3;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    line-height: 1.6;
+    font-size: 0.5rem;
+    max-width: 46rem;
+    width: 100%;
+    margin: 10rem auto 0 auto;
 }
 
-.readme-content h1,
-.readme-content h2,
-.readme-content h3 {
-    margin-top: 1rem;
-    font-weight: 600;
+.review-item {
+    font-size: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
 }
 
-.readme-content pre {
-    background: #eee;
-    padding: 1rem;
-    border-radius: 4px;
-    overflow-x: auto;
-} */
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-item p {
+    margin: 0.2rem 0;
+}
+
+.review-item small {
+    color: #666;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.review-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    gap: 0.8rem;
+}
+
+.review-form h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.review-form button {
+    align-self: flex-start;
+    padding: 0.6rem 1.2rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review-form button:hover {
+    background-color: #333;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.add-review-button {
+    background-color: #000;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-review-button:hover {
+    background-color: #444444;
+    transform: scale(1.1);
+}
 
 @keyframes fadeIn {
     from {
