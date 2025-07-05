@@ -78,7 +78,6 @@ function ProjectAnket() {
 
             <div className="project-reviews">
                 <button className="add-review-button" onClick={() => setShowForm(true)}>+</button>
-                <h2>Reviews</h2>
                 {reviews.length === 0 && <p>No reviews yet.</p>}
                 {reviews.map((review) => (
                     <div key={review.id} className="review-item">
@@ -89,8 +88,6 @@ function ProjectAnket() {
                 ))}
             </div>
 
-
-            {/* Modal Form */}
             {showForm && (
                 <div className="modal-overlay" onClick={() => setShowForm(false)}>
                     <div className="modal" onClick={(e) => e.stopPropagation()}>
