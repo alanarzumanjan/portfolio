@@ -5,7 +5,7 @@
 
 .home {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     padding: 3rem 1rem;
@@ -13,8 +13,16 @@
     animation: fadeIn 1.2s ease;
 }
 
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    margin: 3rem;
+}
+
 .avatar {
-    width: 20rem;
+    width: 25rem;
     border-radius: 100%;
     object-fit: cover;
     margin-bottom: 1.5rem;
@@ -45,21 +53,27 @@ p {
     line-height: 1.6;
 }
 
-.view-projects-btn {
+.home-buttons {
+    display: flex;
+    gap: 1rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.home-link {
     padding: 0.75rem 1.5rem;
-    background-color: #007bff;
+    background-color: #000;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     font-size: 1rem;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
 }
 
-.view-projects-btn:hover {
-    background-color: #0056b3;
+.home-link:hover {
+    background-color: #888;
     transform: translateY(-2px);
 }
 
