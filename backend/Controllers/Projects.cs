@@ -27,6 +27,7 @@ public class ProjectsController : ControllerBase
                 Title = request.Title,
                 Description = request.Description,
                 Languages = request.Languages,
+                Category = request.Category,
                 Technologies = request.Technologies,
                 ImageUrl = request.ImageUrl,
                 GithubUrl = request.GithubUrl,
@@ -66,6 +67,7 @@ public class ProjectsController : ControllerBase
             if (request.Title != null) project.Title = request.Title;
             if (request.Description != null) project.Description = request.Description;
             if (request.Languages != null) project.Languages = request.Languages;
+            if (request.Category != null) project.Category = request.Category;
             if (request.Technologies != null) project.Technologies = request.Technologies;
             if (request.GithubUrl != null) project.GithubUrl = request.GithubUrl;
             if (request.LiveUrl != null) project.LiveUrl = request.LiveUrl;
