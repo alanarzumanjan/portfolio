@@ -19,3 +19,19 @@ footer:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+}

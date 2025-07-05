@@ -78,9 +78,11 @@ p {
 }
 
 .open-to-develop>p {
-    position: relative;
+    position: absolute;
     display: flex;
-    /* margin-top: 5rem; */
+    max-width: 25rem;
+    text-align: left;
+    margin-left: 1.2rem;
 }
 
 @keyframes fadeIn {

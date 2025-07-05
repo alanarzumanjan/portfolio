@@ -112,7 +112,7 @@
 
 .projects-button {
     text-decoration: none;
-    background-color: #4f46e5;
+    background-color: #000000;
     color: white;
     padding: 0.5rem 1.3rem;
     border-radius: 0.75rem;
@@ -127,12 +127,12 @@
 }
 
 .projects-button:hover {
-    background-color: #3730a3;
+    background-color: #888;
     transform: scale(1.05);
-    box-shadow:
-        0 0 0 4px rgba(79, 70, 229, 0.08),
-        0 8px 20px rgba(79, 70, 229, 0.3),
-        0 0 25px rgba(79, 70, 229, 0.2);
+    /* box-shadow:
+        0 0 0 4px rgba(255, 0, 0, 0.08),
+        0 8px 20px rgba(255, 255, 255, 0.3),
+        0 0 25px rgba(255, 255, 255, 0.2); */
 }
 
 .project_language {

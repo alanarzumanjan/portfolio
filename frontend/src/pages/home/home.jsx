@@ -5,7 +5,15 @@ function Home() {
 
     return (
         <div className="home">
-            <img className="avatar" src="/avatar.png" alt="Avatar" />
+            <div className="avatar-text">
+                <img className="avatar" src="/avatar.png" alt="Avatar" />
+                <div className="open-to-develop">
+                    <p><strong>{/*🔍*/}
+                        I'm open to internships, freelance projects, and collaboration. Got an idea? Let’s connect!
+                    </strong></p>
+                </div>
+            </div>
+
             <div className="home-container">
                 <h1>Alan Arzumanjan</h1>
                 <h2>A Bit about me</h2>
@@ -24,12 +32,7 @@ function Home() {
                     <Link className="home-link" to="/contacts">Contacts</Link>
                 </div>
 
-                <div className="open-to-develop">
-                    <p> <strong>
-                        🔍 I'm open to internships, freelance projects, and collaboration.{" "}
-                        <br /> Got an idea? Let’s connect!
-                    </strong></p>
-                </div>
+
 
             </div>
 
