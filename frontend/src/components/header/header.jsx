@@ -1,18 +1,20 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './header.css';
 
 function Header() {
 
     return (
         <header>
-            <h1>Portfolio</h1>
+            <div className="logo">
+                <h1>Portfolio</h1>
+            </div>
+
             <nav>
                 <ul>
-                    <li> <Link to="/home">Home</Link> </li>
-                    <li> <Link to="/projects">Projects</Link> </li>
-                    <li> <Link to="/contacts">Contacts</Link> </li>
-                    <li> <Link to="/about">About</Link> </li>
-                    <li> <Link to="/reviews">Reviews</Link> </li>
+                    <li> <NavLink to="/home" activeClassName="active">Home</NavLink></li>
+                    <li> <NavLink to="/projects" activeClassName="active">Projects</NavLink> </li>
+                    <li> <NavLink to="/contacts" activeClassName="active">Contacts</NavLink> </li>
+                    <li> <NavLink to="/about" activeClassName="active">About</NavLink> </li>
                 </ul>
             </nav>
         </header>

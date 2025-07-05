@@ -9,22 +9,36 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 1.5rem;
-    background-color: #b6b6b6;
+    background-color: #333;
     color: white;
     height: 4rem;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
 }
 
-header h1 {
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo h1 {
     font-size: 1.5rem;
     font-weight: bold;
+    color: white;
+}
+
+.header-name {
+    color: #999;
+    font-weight: normal;
+    font-size: 1rem;
 }
 
 nav ul {
     display: flex;
     gap: 1rem;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 nav a {
@@ -36,5 +50,10 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #888;
+    background-color: #555;
+}
+
+nav a.active {
+    background-color: #666;
+    font-weight: bold;
 }
