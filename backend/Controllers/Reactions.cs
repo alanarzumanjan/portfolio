@@ -151,4 +151,44 @@ public class ReactionsController : ControllerBase
             return StatusCode(500, "Failed to show reaction.");
         }
     }
+    [HttpDelete("review/{reviewId}")]
+    public async Task<IActionResult> RemoveReaction(Guid reviewId, [FromQuery] string emoji)
+    {
+        try
+        {
+            if (string.IsNullOrWhiteSpace(emoji) || emoji.Length > 2)
+                return BadRequest("Invalid emoji");
+
+            using var transaction = await _db.Database.BeginTransactionAsync();
+
+            var reaction = await _db.Reactions
+                .FirstOrDefaultAsync(r => r.ReviewId == reviewId && r.Emoji == emoji);
+
+            if (reaction == null)
+                return NotFound("Reaction not found");
+
+            if (reaction.Count > 1)
+            {
+                reaction.Count -= 1;
+            }
+            else
+            {
+                _db.Reactions.Remove(reaction);
+            }
+
+            await _db.SaveChangesAsync();
+            await transaction.CommitAsync();
+
+            return Ok(new
+            {
+                message = $"Reaction {emoji} removed from review {reviewId}.",
+                data = reaction
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Failed to remove reaction: {ex.Message}");
+            return StatusCode(500, "Failed to remove reaction.");
+        }
+    }
 }

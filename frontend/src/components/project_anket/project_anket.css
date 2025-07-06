@@ -188,23 +188,35 @@
 
 .add-review-button {
     background-color: #000;
-    color: #fff;
-    font-size: 1.5rem;
     border: none;
     border-radius: 50%;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1rem;
+    height: 1rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-review-container {
+    display: flex;
+    justify-content: end;
 }
 
 .add-review-button:hover {
-    background-color: #444444;
-    transform: scale(1.1);
+    background-color: #333;
+    transform: scale(1.05);
 }
+
+.add-review-button img {
+    width: 1.7rem;
+    height: 1.7rem;
+    filter: invert(1);
+
+}
+
 
 .review-reactions {
     display: flex;
