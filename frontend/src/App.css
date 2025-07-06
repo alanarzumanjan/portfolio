@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     /* background-color: rgb(44, 44, 44); */
 }
 
@@ -18,4 +19,227 @@ body,
 
 footer {
     margin-top: auto;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111;
+    --header-bg: #3e322b;
+    --link-color: #0077cc;
+}
+
+body.theme-light {
+    --bg-color: #fefefe;
+    --text-color: #222;
+    --header-bg: #3e322b;
+    --link-color: #0077cc;
+}
+
+body.theme-dark {
+    /* --bg-color: #1a1a1a; */
+    --bg-color: #010409;
+    --text-color: #d0d0d0;
+    /* --header-bg: #111; */
+    --header-bg: 0d1117;
+    --link-color: #8f8f8f;
+    --link-hover: rgb(113, 113, 113);
+    --h-color: #d0d0d0;
+    --category-btn-color: var(--text-color);
+}
+
+body.theme-choco {
+    --bg-color: antiquewhite;
+    --text-color: #fdfaf7;
+    --header-bg: #3e322b;
+    --link-color: #fdfaf7;
+    --link-hover: #a68b74;
+    --h-color: black;
+    --category-btn-color: black;
+}
+
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: var(--header-bg) !important;
+    color: var(--text-color) !important;
+}
+
+footer {
+    background-color: var(--header-bg) !important;
+    color: var(--text-color) !important;
+}
+
+a {
+    color: var(--link-color) !important;
+    background-color: var(--header-bg) !important;
+}
+
+a:hover {
+    background-color: var(--link-hover) !important;
+}
+
+nav a.active {
+    background-color: var(--link-hover) !important;
+}
+
+.p {
+    color: var(--text-color) !important;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--h-color) !important;
+}
+
+.logo h1 {
+    color: var(--text-color) !important;
+}
+
+.projects-inner {
+    color: var(--text-color) !important;
+    background: none !important;
+    border: 0.1px solid var(--link-hover) !important;
+}
+
+.project-details {
+    color: var(--text-color) !important;
+    background: var(--bg-color) !important;
+}
+
+.project-reviews {
+    color: var(--text-color) !important;
+    background: none !important;
+    border: 1px solid var(--link-hover) !important;
+    /* border-width: 6px !important; */
+}
+
+.category-buttons button {
+    color: var(--category-btn-color) !important;
+    background-color: var(--link-color) !important;
+    /* color: black !important; */
+    border: 1px solid var(--link-hover) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.category-buttons button:hover {
+    background-color: var(--link-hover) !important;
+}
+
+.reaction-btn:hover {
+    background-color: var(--link-hover) !important;
+}
+
+.reaction-btn {
+    background-color: var(--bg-color) !important;
+    border: black 2px !important;
+}
+
+.reaction-trigger {
+    color: var(--text-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.reaction-trigger:hover {
+    background-color: var(--link-hover) !important;
+}
+
+.add-review-button img {
+    width: 1.7rem;
+    height: 1.7rem;
+    filter: var(--link-hover) !important;
+    /* background-color: var(--link-hover) !important; */
+    background-color: var(--bg-color) !important;
+}
+
+.modal>h3:nth-child(2) {
+    color: var(--text-color) !important;
+    /* color: black !important; */
+}
+
+.review-form button:hover {
+    background-color: var(--link-hover) !important;
+}
+
+.review-form input,
+.review-form textarea {
+    color: var(--text-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.modal {
+    color: var(--text-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.contacts {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+.contacts a {
+    color: var(--category-btn-color) !important;
+    background: none !important;
+}
+
+.email_icon {
+    background: var(--bg-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.contacts a:hover {
+    background: none !important;
+}
+
+.input,
+textarea {
+    color: var(--text-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--link-hover) !important;
+    outline: none;
+}
+
+#name,
+#email {
+    color: var(--text-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.react-activity-calendar__footer {
+    background-color: #0D1117 !important;
+}
+
+#submit {
+    color: var(--text-color) !important;
+    background-color: var(--header-bg) !important;
+}
+
+#submit:hover {
+    background-color: var(--link-hover) !important;
+}
+
+.theme-select {
+    border: 1px solid var(--link-hover) !important;
+    background: var(--header-bg) !important;
+}
+
+.theme-select option {
+    border: 1px solid var(--link-hover) !important;
+    background: var(--header-bg) !important;
+}
+
+.theme-select option:hover {
+    background: var(--link-hover) !important;
+}
+
+.email {
+    color: var(--text-color) !important;
 }
