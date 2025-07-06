@@ -76,7 +76,7 @@
     font-size: 0.5rem;
     max-width: 46rem;
     width: 100%;
-    margin: 15rem auto 0 auto;
+    margin: 10rem auto 0 auto;
 }
 
 .review-item {
@@ -214,9 +214,7 @@
     width: 1.7rem;
     height: 1.7rem;
     filter: invert(1);
-
 }
-
 
 .review-reactions {
     display: flex;
