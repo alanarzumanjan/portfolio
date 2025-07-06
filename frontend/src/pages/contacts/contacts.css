@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+.info {
+    /* display: flex; */
+    justify-content: center;
+}
+
 .contacts {
     max-width: 37.5rem;
     margin: 3rem auto;
@@ -37,7 +42,7 @@
 }
 
 .contacts img:hover {
-    transform: scale(1.05);
+    transform: scale(1.2);
 }
 
 form {
@@ -127,4 +132,18 @@ button[type="submit"]:hover {
 a:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.icon-btn img {
+    border-radius: 8px;
+    /* min-width: 7rem; */
+    /* width: 7rem !important; */
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+
+.icon-btn img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }

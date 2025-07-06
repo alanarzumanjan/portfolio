@@ -45,28 +45,33 @@ function Contacts() {
     return (
         <div className="contacts">
             <h1>My Contacts</h1>
+            <div className="info">
+                <div className="email">
+                    <img className="email_icon" src={EmailIcon} alt="Email: " />
+                    <p><a href="mailto:alanarzumanjan@gmail">alanarzumanjan@gmail.com</a></p>
+                </div>
 
-            <div className="email">
-                <img className="email_icon" src={EmailIcon} alt="Email: " />
-                <p><a href="mailto:alanarzumanjan@gmail">alanarzumanjan@gmail.com</a></p>
+                <div className="phone">
+                    <img className="phone_icon" src={PhoneIcon} alt="Phone: " />
+                    <p><a href="tel:+371 26 684 439">+371 26 684 439</a></p>
+                </div>
             </div>
 
-            <div className="phone">
-                <img className="phone_icon" src={PhoneIcon} alt="Phone: " />
-                <p><a href="tel:+371 26 684 439">+371 26 684 439</a></p>
+
+            <div className="social-icons">
+                <a href="https://linkedin.com/in/alanarzumanjan" target="_blank" rel="noopener noreferrer" className="icon-btn">
+                    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" />
+                </a>
+
+                <a href="https://github.com/alanarzumanjan" target="_blank" rel="noopener noreferrer" className="icon-btn">
+                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github" />
+                </a>
+
+                <a href="https://t.me/maindeline" target="_blank" rel="noopener noreferrer" className="icon-btn">
+                    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="telegram" />
+                </a>
             </div>
 
-            <a href="https://linkedin.com/in/alanarzumanjan" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" />
-            </a>
-
-            <a href="https://github.com/alanarzumanjan" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github" />
-            </a>
-
-            <a href="https://t.me/maindeline" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="telegram" />
-            </a>
 
             <form onSubmit={handleSubmit}>
                 <h2>Contact Me</h2>
