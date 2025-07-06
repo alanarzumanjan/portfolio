@@ -236,22 +236,3 @@
 .projects-button:focus {
     animation: pulse 1.2s ease-out;
 }
-
-@media (max-width: 500px) {
-    .projects {
-        padding: 2rem 1rem;
-    }
-
-    .projects-item {
-        max-width: 90%;
-        height: auto;
-    }
-
-    .projects-item p {
-        white-space: normal;
-    }
-
-    .projects-buttons {
-        justify-content: center;
-    }
-}
