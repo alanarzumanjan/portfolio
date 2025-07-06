@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: rgb(44, 44, 44); */
 }
 
 html,
@@ -26,27 +25,32 @@ footer {
     --text-color: #111;
     --header-bg: #3e322b;
     --link-color: #0077cc;
+    --link-hover: #005fa3;
+    --h-color: #222;
+    --category-btn-color: #000;
+    --border: #ccc;
+    --button-color: #eee;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow: 0 10px 25px var(--shadow-color);
 }
 
-body.theme-light {
-    --bg-color: #fefefe;
-    --text-color: #222;
-    --header-bg: #3e322b;
-    --link-color: #0077cc;
-}
-
+/* 🌙 DARK THEME — GitHub style */
 body.theme-dark {
-    /* --bg-color: #1a1a1a; */
-    --bg-color: #010409;
-    --text-color: #d0d0d0;
-    /* --header-bg: #111; */
-    --header-bg: 0d1117;
-    --link-color: #8f8f8f;
-    --link-hover: rgb(113, 113, 113);
-    --h-color: #d0d0d0;
-    --category-btn-color: var(--text-color);
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --header-bg: #161b22;
+    --link-color: #58a6ff;
+    --link-hover: #1f6feb;
+    --h-color: #f0f6fc;
+    --category-btn-color: #f0f6fc;
+    --border: #30363d;
+    --button-color: #21262d;
+    --shadow-color: rgba(1, 4, 9, 0.6);
+    --shadow: 0 10px 25px var(--shadow-color);
+    --about-text-color: #666;
 }
 
+/* 🍫 CHOCO THEME */
 body.theme-choco {
     --bg-color: antiquewhite;
     --text-color: #fdfaf7;
@@ -55,6 +59,8 @@ body.theme-choco {
     --link-hover: #a68b74;
     --h-color: black;
     --category-btn-color: black;
+    --border: var(--link-hover);
+    --button-color: var(--header-bg);
 }
 
 body {
@@ -63,11 +69,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header {
-    background-color: var(--header-bg) !important;
-    color: var(--text-color) !important;
-}
-
+header,
 footer {
     background-color: var(--header-bg) !important;
     color: var(--text-color) !important;
@@ -86,119 +88,99 @@ nav a.active {
     background-color: var(--link-hover) !important;
 }
 
-.p {
-    color: var(--text-color) !important;
-}
-
 h1,
 h2,
 h3 {
     color: var(--h-color) !important;
 }
 
+.about h2 {
+    color: var(--h-color) !important;
+    border-bottom: 1px solid var(--border) !important;
+    padding-bottom: 0.3rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.about p {
+    color: var(--about-text-color) !important;
+}
+
+.about ul li {
+    color: var(--about-text-color) !important;
+}
+
+.about strong {
+    color: var(--link-hover) !important;
+}
+
 .logo h1 {
     color: var(--text-color) !important;
 }
 
-.projects-inner {
+.p {
     color: var(--text-color) !important;
-    background: none !important;
-    border: 0.1px solid var(--link-hover) !important;
 }
 
-.project-details {
-    color: var(--text-color) !important;
-    background: var(--bg-color) !important;
-}
-
-.project-reviews {
-    color: var(--text-color) !important;
-    background: none !important;
-    border: 1px solid var(--link-hover) !important;
-    /* border-width: 6px !important; */
-}
-
-.category-buttons button {
-    color: var(--category-btn-color) !important;
-    background-color: var(--link-color) !important;
-    /* color: black !important; */
-    border: 1px solid var(--link-hover) !important;
-    background-color: var(--bg-color) !important;
-}
-
-.category-buttons button:hover {
-    background-color: var(--link-hover) !important;
-}
-
-.reaction-btn:hover {
-    background-color: var(--link-hover) !important;
-}
-
-.reaction-btn {
-    background-color: var(--bg-color) !important;
-    border: black 2px !important;
-}
-
-.reaction-trigger {
-    color: var(--text-color) !important;
-    background-color: var(--bg-color) !important;
-}
-
-.reaction-trigger:hover {
-    background-color: var(--link-hover) !important;
-}
-
-.add-review-button img {
-    width: 1.7rem;
-    height: 1.7rem;
-    filter: var(--link-hover) !important;
-    /* background-color: var(--link-hover) !important; */
-    background-color: var(--bg-color) !important;
-}
-
-.modal>h3:nth-child(2) {
-    color: var(--text-color) !important;
-    /* color: black !important; */
-}
-
-.review-form button:hover {
-    background-color: var(--link-hover) !important;
-}
-
-.review-form input,
-.review-form textarea {
-    color: var(--text-color) !important;
-    background-color: var(--bg-color) !important;
-}
-
+/* Containers and sections */
+.projects-inner,
+.project-details,
+.project-reviews,
+.contacts,
 .modal {
-    color: var(--text-color) !important;
-    background-color: var(--bg-color) !important;
-}
-
-.contacts {
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow);
 }
 
-.contacts a {
-    color: var(--category-btn-color) !important;
-    background: none !important;
+/* Buttons */
+button,
+.add-review-button,
+.project-button,
+.review-form button,
+.category-buttons button,
+.reaction-btn,
+.reaction-trigger,
+.theme-select {
+    background-color: var(--button-color) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border) !important;
+    transition: background-color 0.3s ease;
 }
 
-.email_icon {
-    background: var(--bg-color) !important;
-    background-color: var(--bg-color) !important;
+button:hover,
+.add-review-button:hover,
+.project-button:hover,
+.review-form button:hover,
+.category-buttons button:hover,
+.reaction-btn:hover,
+.reaction-trigger:hover,
+.theme-select:hover {
+    background-color: var(--link-hover) !important;
 }
 
-.contacts a:hover {
-    background: none !important;
+/* Active */
+.category-buttons .active,
+nav a.active {
+    background-color: var(--link-hover) !important;
+    color: white !important;
 }
 
+/* Froms */
+input,
+textarea,
+input:focus,
+textarea:focus,
+.review-form input,
+.review-form textarea,
+#name,
+#email,
 .input,
-textarea {
-    color: var(--text-color) !important;
+.modal input,
+.modal textarea {
     background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border) !important;
 }
 
 input:focus,
@@ -207,14 +189,9 @@ textarea:focus {
     outline: none;
 }
 
-#name,
-#email {
-    color: var(--text-color) !important;
-    background-color: var(--bg-color) !important;
-}
-
-.react-activity-calendar__footer {
-    background-color: #0D1117 !important;
+/* Специфика для формы */
+.review-form button:hover {
+    background-color: var(--link-hover) !important;
 }
 
 #submit {
@@ -226,20 +203,47 @@ textarea:focus {
     background-color: var(--link-hover) !important;
 }
 
-.theme-select {
-    border: 1px solid var(--link-hover) !important;
-    background: var(--header-bg) !important;
+/* Icons + */
+.add-review-button img {
+    width: 1.7rem;
+    height: 1.7rem;
+    filter: invert(1);
+    background-color: var(--link-hover) !important;
+    border-radius: 50%;
 }
 
-.theme-select option {
-    border: 1px solid var(--link-hover) !important;
-    background: var(--header-bg) !important;
+/* GitHub calendar */
+.react-activity-calendar__footer,
+.react-activity-calendar__count {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
 }
 
-.theme-select option:hover {
-    background: var(--link-hover) !important;
+/* Contacts */
+.contacts a,
+.contacts a:hover {
+    background: none !important;
+    color: var(--category-btn-color) !important;
+}
+
+.email_icon {
+    background-color: var(--bg-color) !important;
 }
 
 .email {
     color: var(--text-color) !important;
+}
+
+/* Theme selector */
+.theme-select {
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.theme-select option {
+    background-color: var(--header-bg);
+    color: var(--text-color);
 }
