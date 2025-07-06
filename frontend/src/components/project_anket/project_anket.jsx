@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./project_anket.css";
-
+import AddIcon from "../../assets/add.png"
 function ProjectAnket() {
     const { id } = useParams();
     const [project, setProject] = useState(null);
@@ -57,47 +57,66 @@ function ProjectAnket() {
 
     const handleReact = async (reviewId, emoji) => {
         const reactedKey = `reacted_${reviewId}_${emoji}`;
-        if (localStorage.getItem(reactedKey)) return;
+        const alreadyReacted = localStorage.getItem(reactedKey);
+        const method = alreadyReacted ? "DELETE" : "POST";
+
+        const url = alreadyReacted
+            ? `http://localhost:5000/reactions/review/${reviewId}?emoji=${encodeURIComponent(emoji)}`
+            : `http://localhost:5000/reactions/${reviewId}`;
 
         try {
-            const res = await fetch(`http://localhost:5000/reactions/${reviewId}`, {
-                method: "POST",
+            const res = await fetch(url, {
+                method,
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ emoji }),
+                body: method === "POST" ? JSON.stringify({ emoji }) : null,
             });
 
             const result = await res.json();
+            if (!res.ok) return;
 
-            if (res.ok && result.data) {
+            if (alreadyReacted) {
+                localStorage.removeItem(reactedKey);
+            } else {
                 localStorage.setItem(reactedKey, "1");
+            }
 
-                const newReaction = result.data;
+            setReviews((prev) =>
+                prev.map((review) => {
+                    if (review.id !== reviewId) return review;
 
-                setReviews((prev) =>
-                    prev.map((review) => {
-                        if (review.id !== reviewId) return review;
+                    const existing = review.reactions?.find((r) => r.emoji === emoji);
 
-                        const existing = review.reactions?.find((r) => r.emoji === emoji);
-                        if (existing) {
-                            return {
-                                ...review,
-                                reactions: review.reactions.map((r) =>
-                                    r.emoji === emoji ? { ...r, count: newReaction.count } : r
-                                ),
-                            };
+                    if (existing) {
+                        if (alreadyReacted) {
+                            const updated = review.reactions
+                                .map((r) =>
+                                    r.emoji === emoji
+                                        ? { ...r, count: Math.max(0, r.count - 1) }
+                                        : r
+                                )
+                                .filter((r) => r.count > 0);
+                            return { ...review, reactions: updated };
                         } else {
                             return {
                                 ...review,
-                                reactions: [...(review.reactions || []), newReaction],
+                                reactions: review.reactions.map((r) =>
+                                    r.emoji === emoji ? { ...r, count: result.data.count } : r
+                                ),
                             };
                         }
-                    })
-                );
-            }
+                    } else {
+                        return {
+                            ...review,
+                            reactions: [...(review.reactions || []), result.data],
+                        };
+                    }
+                })
+            );
         } catch (err) {
-            console.error("Failed to react:", err);
+            console.error("Failed to toggle reaction:", err);
         }
     };
+
 
 
     useEffect(() => {
@@ -133,7 +152,12 @@ function ProjectAnket() {
             </div>
 
             <div className="project-reviews">
-                <button className="add-review-button" onClick={() => setShowForm(true)}>+</button>
+                <div className="add-review-container">
+                    <button className="add-review-button" onClick={() => setShowForm(true)}>
+                        <img src={AddIcon} alt="+" />
+                    </button>
+                </div>
+
                 {reviews.length === 0 && <p>No reviews yet.</p>}
                 {reviews.map((review) => (
                     <div key={review.id} className="review-item">
