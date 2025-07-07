@@ -34,7 +34,7 @@ footer {
     --add-review-button-color: var(--link-hover);
     --github-count-color: var(--text-color);
     --footer-text-color: var(--link-color);
-    --p-color: #666;
+    --p-color: var(--text-color);
     --shadow-color: rgba(0, 0, 0, 0.1);
     --shadow: 0 10px 25px var(--shadow-color);
 }
@@ -76,7 +76,7 @@ body.theme-dark {
     --button-color: #21262d;
     --shadow-color: rgba(1, 4, 9, 0.6);
     --shadow: 0 10px 25px var(--shadow-color);
-    --about-text-color: #666;
+    --about-text-color: var(--text-color);
     --input-text-color: var(--text-color);
     --add-review-button-color: var(--link-hover);
     --github-count-color: var(--text-color);

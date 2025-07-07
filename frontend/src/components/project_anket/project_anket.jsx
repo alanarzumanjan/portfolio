@@ -33,7 +33,7 @@ function ProjectAnket() {
         };
 
         fetchProject();
-    }, [id]);
+    }, [id, backendUrl]);
 
     const handleReviewSubmit = async (e) => {
         e.preventDefault();

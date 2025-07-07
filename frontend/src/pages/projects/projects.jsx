@@ -14,7 +14,7 @@ function Projects() {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await fetch("${backendUrl}/projects");
+                const response = await fetch(`${backendUrl}/projects`);
                 const result = await response.json();
                 setProjects(result?.data ?? []);
             }
@@ -27,7 +27,7 @@ function Projects() {
         };
 
         fetchProjects();
-    }, []);
+    }, [backendUrl]);
 
     return (
         <div className="projects">
