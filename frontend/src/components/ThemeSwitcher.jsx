@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const themes = ["light", "dark", "choco"];
+const themes = ["light", "dark", "choco", "dracula", "ocean", "sepia", "blush", "blush-dark", "evergreen", "midnight-aurora", "sunset-sorbet", "matrix"];
 
 function ThemeSwitcher() {
     const [theme, setTheme] = useState(() => {

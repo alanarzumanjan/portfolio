@@ -21,15 +21,20 @@ footer {
 }
 
 :root {
-    --bg-color: #ffffff;
-    --text-color: #111;
+    --bg-color: antiquewhite;
+    --text-color: #fdfaf7;
     --header-bg: #3e322b;
-    --link-color: #0077cc;
-    --link-hover: #005fa3;
-    --h-color: #222;
-    --category-btn-color: #000;
-    --border: #ccc;
-    --button-color: #eee;
+    --link-color: #fdfaf7;
+    --link-hover: #a68b74;
+    --h-color: black;
+    --category-btn-color: black;
+    --border: var(--link-hover);
+    --button-color: var(--header-bg);
+    --input-text-color: var(--h-color);
+    --add-review-button-color: var(--link-hover);
+    --github-count-color: var(--text-color);
+    --footer-text-color: var(--link-color);
+    --p-color: #666;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --shadow: 0 10px 25px var(--shadow-color);
 }
@@ -52,6 +57,10 @@ body.theme-light {
     --add-review-button-color: none;
     --github-count-color: var(--header-bg);
     --footer-text-color: var(--text-color);
+    --p-color: var(--text-color);
+    --about-text-color: #57606a;
+    --shadow: 0 10px 25px rgba(149, 157, 165, 0.2);
+
 }
 
 /* 🌙 DARK THEME — GitHub Style */
@@ -72,6 +81,7 @@ body.theme-dark {
     --add-review-button-color: var(--link-hover);
     --github-count-color: var(--text-color);
     --footer-text-color: var(--text-color);
+    --p-color: var(--text-color);
 }
 
 /* 🍫 CHOCO THEME */
@@ -89,6 +99,168 @@ body.theme-choco {
     --add-review-button-color: var(--link-hover);
     --github-count-color: var(--text-color);
     --footer-text-color: var(--link-color);
+    --p-color: #666;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow: 0 10px 25px var(--shadow-color);
+
+}
+
+body.theme-dracula {
+    --bg-color: #282a36;
+    --text-color: #f8f8f2;
+    --header-bg: #21222c;
+    --link-color: #bd93f9;
+    --link-hover: #8be9fd;
+    --h-color: #ffffff;
+    --category-btn-color: #f8f8f2;
+    --border: #6272a4;
+    --button-color: #44475a;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --shadow: 0 10px 25px var(--shadow-color);
+    --about-text-color: #bbbbbb;
+    --input-text-color: #f8f8f2;
+    --add-review-button-color: #bd93f9;
+    --github-count-color: #f8f8f2;
+    --footer-text-color: #f8f8f2;
+    --p-color: var(--text-color);
+}
+
+body.theme-ocean {
+    --bg-color: #e6f7ff;
+    --text-color: #002b36;
+    --header-bg: #b3e5fc;
+    --link-color: #0077b6;
+    --link-hover: #023e8a;
+    --h-color: #001219;
+    --category-btn-color: #002b36;
+    --border: #90e0ef;
+    --button-color: #caf0f8;
+    --input-text-color: #002b36;
+    --add-review-button-color: #00b4d8;
+    --github-count-color: var(--bg-color);
+    --footer-text-color: #002b36;
+    --p-color: var(--text-color);
+}
+
+body.theme-sepia {
+    --bg-color: #f4ecd8;
+    --text-color: #5b4636;
+    --header-bg: #e0c097;
+    --link-color: #8b5e3c;
+    --link-hover: #a47148;
+    --h-color: #3e2c23;
+    --category-btn-color: #5b4636;
+    --border: #c3a380;
+    --button-color: #f7e7ce;
+    --input-text-color: #5b4636;
+    --add-review-button-color: #c88a65;
+    --github-count-color: #3e2c23;
+    --footer-text-color: #5b4636;
+    --p-color: var(--text-color);
+}
+
+body.theme-blush {
+    --bg-color: #fdf6f0;
+    --text-color: #3e3e3e;
+    --header-bg: #f7e8e1;
+    --link-color: #d67f7f;
+    --link-hover: #e2a9a9;
+    --h-color: #5a3e36;
+    --category-btn-color: #5a3e36;
+    --border: #e3c3b9;
+    --button-color: #ffeae0;
+    --input-text-color: #3e3e3e;
+    --add-review-button-color: #e89b9b;
+    --github-count-color: var(--bg-color);
+    --footer-text-color: #5a3e36;
+    --p-color: var(--text-color);
+}
+
+body.theme-blush-dark {
+    --bg-color: #2e1f1f;
+    --text-color: #f9eae4;
+    --header-bg: #3d2a2a;
+    --link-color: #e89b9b;
+    --link-hover: #f2bfbf;
+    --h-color: #ffe3dc;
+    --category-btn-color: #fbdedb;
+    --border: #865d5d;
+    --button-color: #5a3a3a;
+    --input-text-color: #ffeae0;
+    --add-review-button-color: #f2bfbf;
+    --github-count-color: #f9eae4;
+    --footer-text-color: #f9eae4;
+    --about-text-color: var(--text-color);
+    --p-color: var(--text-color);
+}
+
+body.theme-matrix {
+    --bg-color: #0f0f0f;
+    --text-color: #00ff00;
+    --header-bg: #000000;
+    --link-color: #39ff14;
+    --link-hover: #00ff99;
+    --h-color: #00ff00;
+    --category-btn-color: #00ff00;
+    --border: #00cc66;
+    --button-color: #003300;
+    --input-text-color: #00ff00;
+    --add-review-button-color: #00ff00;
+    --github-count-color: #00ff00;
+    --footer-text-color: #00ff00;
+    --about-text-color: #666;
+    --p-color: var(--text-color);
+}
+
+body.theme-evergreen {
+    --bg-color: #e8f5e9;
+    --text-color: #1b3b2f;
+    --header-bg: #a5d6a7;
+    --link-color: #2e7d32;
+    --link-hover: #1b5e20;
+    --h-color: #14532d;
+    --category-btn-color: #1b3b2f;
+    --border: #81c784;
+    --button-color: #c8e6c9;
+    --input-text-color: #1b3b2f;
+    --add-review-button-color: #66bb6a;
+    --github-count-color: #1b3b2f;
+    --footer-text-color: #1b3b2f;
+    --p-color: var(--text-color);
+}
+
+body.theme-midnight-aurora {
+    --bg-color: #0b0f1a;
+    --text-color: #dcdcdc;
+    --header-bg: #131a2b;
+    --link-color: #7df9ff;
+    --link-hover: #b388eb;
+    --h-color: #c4e2ff;
+    --category-btn-color: #e0e0e0;
+    --border: #3c4a5d;
+    --button-color: #1c2433;
+    --input-text-color: #e0f7fa;
+    --add-review-button-color: #7df9ff;
+    --github-count-color: #ffffff;
+    --footer-text-color: #cdd9e5;
+    --p-color: var(--text-color);
+    --about-text-color: var(--p-color);
+}
+
+body.theme-sunset-sorbet {
+    --bg-color: #fff4e6;
+    --text-color: #5e3a2f;
+    --header-bg: #ffe0cc;
+    --link-color: #ff7b72;
+    --link-hover: #ff9770;
+    --h-color: #a14f3f;
+    --category-btn-color: #5e3a2f;
+    --border: #f9c6aa;
+    --button-color: #ffdac1;
+    --input-text-color: #5e3a2f;
+    --add-review-button-color: #ff9770;
+    --github-count-color: #5e3a2f;
+    --footer-text-color: #5e3a2f;
 }
 
 body {
@@ -105,6 +277,10 @@ footer {
 
 .footer-text {
     color: var(--footer-text-color) !important;
+}
+
+p {
+    color: var(--p-color) !important;
 }
 
 a {
