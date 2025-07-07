@@ -13,74 +13,32 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 
 ---
 
-## 🌐 Site Structure
-
-| Route                   | Description                                             |
-| ----------------------- | ------------------------------------------------------- |
-| `/`                     | Home page: intro, highlights, navigation links          |
-| `/about`                | About me: skills, education, experience                 |
-| `/projects`             | List of projects with brief descriptions                |
-| `/projects/[slug]`      | Detailed project page with screenshots and user reviews |
-| `/contact`              | Contact form for messages                               |
-| `/cv` _(optional)_      | Interactive or downloadable CV (PDF format)             |
-| `/reviews` _(optional)_ | List of user reviews for projects                       |
-
----
-
 ## 🧱 Architecture
 
 ### 💻 Frontend
 
 - **Next.js (React)** — modern framework for SSR/SSG
-- **TypeScript** — strong typing for reliability
-- **shadcn/ui** — beautiful UI components
-- **Framer Motion** — animations and transitions
+- **JavaScrypt** — strong typing for reliability
+- **CSS** — beautiful UI components
 
 ### ⚙️ Backend
 
 - **ASP.NET Core Web API** — REST API for projects and reviews
 - **SQLite** — lightweight local database
 - **Entity Framework Core** — ORM for managing the data layer
+- **Swagger** — API documentation
 
 ---
 
 ## 🔄 API Endpoints
 
-| Method | Endpoint                     | Description                      |
-| ------ | ---------------------------- | -------------------------------- |
-| `GET`  | `/api/projects`              | Get list of all projects         |
-| `GET`  | `/api/projects/{slug}`       | Get detailed project information |
-| `GET`  | `/api/reviews/{projectSlug}` | Get all reviews for a project    |
-| `POST` | `/api/reviews`               | Submit a new review              |
+<img className="api" src="backend/wwwroot/api.png" alt="Avatar" height="400px" />
 
 ---
 
 ## 🗃️ Database Structure
 
-### 📁 Projects
-
-| Column        | Type     |
-| ------------- | -------- |
-| `Id`          | int      |
-| `Slug`        | string   |
-| `Title`       | string   |
-| `Description` | string   |
-| `Tags`        | string[] |
-| `GitHubUrl`   | string   |
-| `LiveUrl`     | string   |
-| `ImageUrl`    | string   |
-
-### 📁 Reviews
-
-| Column        | Type     |
-| ------------- | -------- |
-| `Id`          | int      |
-| `ProjectSlug` | string   |
-| `Name`        | string   |
-| `Text`        | string   |
-| `CreatedAt`   | DateTime |
-
----
+<img className="api" src="backend/wwwroot/database_diagram.png" alt="Avatar" width="350px" />
 
 ## 🚀 Getting Started
 
