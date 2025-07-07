@@ -20,7 +20,7 @@ function Footer() {
                     </a>
                 </div> */}
 
-                <p> © {new Date().getFullYear()} Alan Arzumanjan. All rights reserved.</p>
+                <p className="footer-text"> © {new Date().getFullYear()} Alan Arzumanjan. All rights reserved.</p>
             </div>
 
         </footer>

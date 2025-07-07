@@ -34,7 +34,27 @@ footer {
     --shadow: 0 10px 25px var(--shadow-color);
 }
 
-/* 🌙 DARK THEME — GitHub style */
+/* ⚡ LIGHT THEME - Github Style */
+body.theme-light {
+    --bg-color: #f6f8fa;
+    --text-color: #24292f;
+    --header-bg: #ffffff;
+    --link-color: #0969da;
+    --link-hover: #054da3;
+    --h-color: #1f2328;
+    --category-btn-color: #1f2328;
+    --border: #d0d7de;
+    --button-color: #f3f4f6;
+    --shadow-color: rgba(149, 157, 165, 0.2);
+    --shadow: 0 10px 25px var(--shadow-color);
+    --about-text-color: #57606a;
+    --input-text-color: #24292f;
+    --add-review-button-color: none;
+    --github-count-color: var(--header-bg);
+    --footer-text-color: var(--text-color);
+}
+
+/* 🌙 DARK THEME — GitHub Style */
 body.theme-dark {
     --bg-color: #0d1117;
     --text-color: #c9d1d9;
@@ -48,6 +68,10 @@ body.theme-dark {
     --shadow-color: rgba(1, 4, 9, 0.6);
     --shadow: 0 10px 25px var(--shadow-color);
     --about-text-color: #666;
+    --input-text-color: var(--text-color);
+    --add-review-button-color: var(--link-hover);
+    --github-count-color: var(--text-color);
+    --footer-text-color: var(--text-color);
 }
 
 /* 🍫 CHOCO THEME */
@@ -61,6 +85,10 @@ body.theme-choco {
     --category-btn-color: black;
     --border: var(--link-hover);
     --button-color: var(--header-bg);
+    --input-text-color: var(--h-color);
+    --add-review-button-color: var(--link-hover);
+    --github-count-color: var(--text-color);
+    --footer-text-color: var(--link-color);
 }
 
 body {
@@ -72,7 +100,11 @@ body {
 header,
 footer {
     background-color: var(--header-bg) !important;
-    color: var(--text-color) !important;
+    color: var(--footer-text-color) !important;
+}
+
+.footer-text {
+    color: var(--footer-text-color) !important;
 }
 
 a {
@@ -92,6 +124,10 @@ h1,
 h2,
 h3 {
     color: var(--h-color) !important;
+}
+
+.button {
+    background-color: var(--button-color);
 }
 
 .about h2 {
@@ -143,7 +179,7 @@ button,
 .reaction-trigger,
 .theme-select {
     background-color: var(--button-color) !important;
-    color: var(--text-color) !important;
+    color: var(--link-color) !important;
     border: 1px solid var(--border) !important;
     transition: background-color 0.3s ease;
 }
@@ -179,7 +215,7 @@ textarea:focus,
 .modal input,
 .modal textarea {
     background-color: var(--bg-color) !important;
-    color: var(--text-color) !important;
+    color: var(--input-text-color) !important;
     border: 1px solid var(--border) !important;
 }
 
@@ -205,9 +241,6 @@ textarea:focus {
 
 /* Icons + */
 .add-review-button img {
-    width: 1.7rem;
-    height: 1.7rem;
-    filter: invert(1);
     background-color: var(--link-hover) !important;
     border-radius: 50%;
 }
@@ -215,8 +248,8 @@ textarea:focus {
 /* GitHub calendar */
 .react-activity-calendar__footer,
 .react-activity-calendar__count {
-    background-color: var(--bg-color) !important;
-    color: var(--text-color) !important;
+    background-color: #0D1117 !important;
+    color: var(--github-count-color) !important;
 }
 
 /* Contacts */
@@ -232,6 +265,14 @@ textarea:focus {
 
 .email {
     color: var(--text-color) !important;
+}
+
+.add-review-button img {
+    background-color: var(--add-review-button-color) !important;
+}
+
+.reaction-options-click {
+    background-color: var(--header-bg) !important;
 }
 
 /* Theme selector */

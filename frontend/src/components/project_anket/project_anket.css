@@ -213,7 +213,6 @@
 .add-review-button img {
     width: 1.7rem;
     height: 1.7rem;
-    filter: invert(1);
 }
 
 .review-reactions {
