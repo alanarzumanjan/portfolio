@@ -1,6 +1,6 @@
 import './about.css';
 import GitHubCalendar from 'react-github-calendar';
-import alan_cv from '../../assets/Alan_Arzumanjan_CV.docx';
+import alan_cv from '../../assets/Alan_Arzumanjan_CV.pdf';
 
 function About() {
 

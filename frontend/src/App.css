@@ -21,22 +21,23 @@ footer {
 }
 
 :root {
-    --bg-color: antiquewhite;
-    --text-color: #fdfaf7;
-    --header-bg: #3e322b;
-    --link-color: #fdfaf7;
-    --link-hover: #a68b74;
-    --h-color: black;
-    --category-btn-color: black;
-    --border: var(--link-hover);
-    --button-color: var(--header-bg);
-    --input-text-color: var(--h-color);
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --header-bg: #161b22;
+    --link-color: #58a6ff;
+    --link-hover: #1f6feb;
+    --h-color: #f0f6fc;
+    --category-btn-color: #f0f6fc;
+    --border: #30363d;
+    --button-color: #21262d;
+    --shadow-color: rgba(1, 4, 9, 0.6);
+    --shadow: 0 10px 25px var(--shadow-color);
+    --about-text-color: var(--text-color);
+    --input-text-color: var(--text-color);
     --add-review-button-color: var(--link-hover);
     --github-count-color: var(--text-color);
-    --footer-text-color: var(--link-color);
+    --footer-text-color: var(--text-color);
     --p-color: var(--text-color);
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --shadow: 0 10px 25px var(--shadow-color);
 }
 
 /* ⚡ LIGHT THEME - Github Style */
@@ -99,9 +100,10 @@ body.theme-choco {
     --add-review-button-color: var(--link-hover);
     --github-count-color: var(--text-color);
     --footer-text-color: var(--link-color);
-    --p-color: #666;
+    --p-color: #4a3d36;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --shadow: 0 10px 25px var(--shadow-color);
+    --about-text-color: var(--p-color);
 }
 
 body.theme-dracula {
@@ -116,7 +118,7 @@ body.theme-dracula {
     --button-color: #44475a;
     --shadow-color: rgba(0, 0, 0, 0.5);
     --shadow: 0 10px 25px var(--shadow-color);
-    --about-text-color: #bbbbbb;
+    --about-text-color: var(--text-color);
     --input-text-color: #f8f8f2;
     --add-review-button-color: #bd93f9;
     --github-count-color: #f8f8f2;
@@ -139,6 +141,7 @@ body.theme-ocean {
     --github-count-color: var(--bg-color);
     --footer-text-color: #002b36;
     --p-color: var(--text-color);
+    --about-text-color: var(--text-color);
 }
 
 body.theme-sepia {
@@ -156,6 +159,7 @@ body.theme-sepia {
     --github-count-color: #3e2c23;
     --footer-text-color: #5b4636;
     --p-color: var(--text-color);
+    --about-text-color: var(--text-color);
 }
 
 body.theme-blush {
@@ -173,6 +177,7 @@ body.theme-blush {
     --github-count-color: var(--bg-color);
     --footer-text-color: #5a3e36;
     --p-color: var(--text-color);
+    --about-text-color: var(--text-color);
 }
 
 body.theme-blush-dark {
@@ -207,7 +212,7 @@ body.theme-matrix {
     --add-review-button-color: #00ff00;
     --github-count-color: #00ff00;
     --footer-text-color: #00ff00;
-    --about-text-color: #666;
+    --about-text-color: var(--text-color);
     --p-color: var(--text-color);
 }
 
@@ -226,6 +231,7 @@ body.theme-evergreen {
     --github-count-color: #1b3b2f;
     --footer-text-color: #1b3b2f;
     --p-color: var(--text-color);
+    --about-text-color: var(--text-color);
 }
 
 body.theme-midnight-aurora {
@@ -243,7 +249,7 @@ body.theme-midnight-aurora {
     --github-count-color: #ffffff;
     --footer-text-color: #cdd9e5;
     --p-color: var(--text-color);
-    --about-text-color: var(--p-color);
+    --about-text-color: var(--text-color);
 }
 
 body.theme-sunset-sorbet {
@@ -260,6 +266,8 @@ body.theme-sunset-sorbet {
     --add-review-button-color: #ff9770;
     --github-count-color: #5e3a2f;
     --footer-text-color: #5e3a2f;
+    --p-color: var(--text-color);
+    --about-text-color: var(--text-color);
 }
 
 body {
