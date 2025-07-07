@@ -13,7 +13,7 @@ WORKDIR /app
 COPY --from=build /out .
 
 COPY Data/portfolio.db ./Data/portfolio.db
-COPY .env .env
+# COPY .env .env
 
 ENV DOTNET_RUNNING_IN_CONTAINER=true
 ENV ASPNETCORE_ENVIRONMENT=Development
