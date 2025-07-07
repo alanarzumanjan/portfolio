@@ -102,7 +102,6 @@ body.theme-choco {
     --p-color: #666;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --shadow: 0 10px 25px var(--shadow-color);
-
 }
 
 body.theme-dracula {
