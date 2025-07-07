@@ -83,7 +83,8 @@ app.Use(async (context, next) =>
         Console.WriteLine("User: Rate limit exceeded. Please wait a 10 minute.");
     }
 });
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
 app.UseStaticFiles();
 app.MapHealthChecks("/health");
 app.MapControllers();
-app.Run();
+app.Run($"http://0.0.0.0:{port}");
