@@ -74,6 +74,16 @@ nav a.active {
     cursor: pointer;
 }
 
+.theme-select {
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid var(--text-color);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
 
 @media (max-width: 600px) {
     .nav {

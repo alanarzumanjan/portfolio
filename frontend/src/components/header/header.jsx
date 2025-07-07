@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import './header.css';
 import { useState } from "react";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,7 @@ function Header() {
             <button className="burger" onClick={toggleMenu}>
                 ☰
             </button>
+            <ThemeSwitcher />
         </header>
     );
 }

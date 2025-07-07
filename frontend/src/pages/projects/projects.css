@@ -54,7 +54,7 @@
 }
 
 .projects-inner {
-    background: #ffffff;
+    /* background: #ffffff; */
     border-radius: 1.25rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;

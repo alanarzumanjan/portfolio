@@ -87,7 +87,7 @@ function Contacts() {
                 <textarea id="message" name="message" value={formData.message} onChange={handleChange} required
                     placeholder="Enter your message">
                 </textarea>
-                <button type="submit">Send</button>
+                <button type="submit" id="submit">Submit</button>
                 <p>{status}</p>
             </form>
         </div>
