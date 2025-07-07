@@ -4,4 +4,3 @@
 .env
 
 # Ignore Database file
-Data/portfolio.db
