@@ -4,6 +4,9 @@ import PhoneIcon from "../../assets/phone_call.png";
 import EmailIcon from "../../assets/email.png";
 
 function Contacts() {
+
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -23,7 +26,7 @@ function Contacts() {
         e.preventDefault();
         setStatus("Sending...");
         try {
-            const response = await fetch("http://localhost:5000/contacts", {
+            const response = await fetch("${backendUrl}/contacts", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),

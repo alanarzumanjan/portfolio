@@ -32,8 +32,6 @@ function Home() {
                     <Link className="home-link" to="/contacts">Contacts</Link>
                 </div>
 
-
-
             </div>
 
         </div>

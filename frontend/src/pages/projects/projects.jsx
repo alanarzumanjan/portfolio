@@ -5,6 +5,7 @@ function Projects() {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
     const [category, setCategory] = useState("All");
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
     const filtered = category === "All"
         ? projects
@@ -13,7 +14,7 @@ function Projects() {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await fetch("http://localhost:5000/projects");
+                const response = await fetch("${backendUrl}/projects");
                 const result = await response.json();
                 setProjects(result?.data ?? []);
             }
@@ -52,7 +53,7 @@ function Projects() {
                             <div className="projects-item" key={project.id} style={{ "--delay": `${index * 0.2}s` }}>
                                 <div className="projects-inner">
                                     <h2>{project.title}</h2>
-                                    <img src={`http://localhost:5000${project.imageUrl}`} alt={project.title} />
+                                    <img src={`${backendUrl}${project.imageUrl}`} alt={project.title} />
                                     <p className="projects-description" title={project.description}>
                                         {project.description}
                                     </p>

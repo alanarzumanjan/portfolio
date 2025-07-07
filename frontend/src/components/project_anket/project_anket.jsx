@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./project_anket.css";
 import AddIcon from "../../assets/add.png"
+
 function ProjectAnket() {
     const { id } = useParams();
     const [project, setProject] = useState(null);
@@ -12,14 +13,16 @@ function ProjectAnket() {
     const [showForm, setShowForm] = useState(false);
     const [openReactionMenuId, setOpenReactionMenuId] = useState(null);
 
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
     useEffect(() => {
         const fetchProject = async () => {
             try {
-                const resProject = await fetch(`http://localhost:5000/projects/${id}`);
+                const resProject = await fetch(`${backendUrl}/projects/${id}`);
                 const jsonProject = await resProject.json();
                 setProject(jsonProject.data);
 
-                const resReviews = await fetch(`http://localhost:5000/reviews/project/${id}`);
+                const resReviews = await fetch(`${backendUrl}/reviews/project/${id}`);
                 const jsonReviews = await resReviews.json();
                 setReviews(jsonReviews);
             } catch (err) {
@@ -37,7 +40,7 @@ function ProjectAnket() {
         if (!username.trim() || !comment.trim()) return;
 
         try {
-            const res = await fetch(`http://localhost:5000/reviews/${id}`, {
+            const res = await fetch(`${backendUrl}/reviews/${id}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username, comment }),
@@ -61,8 +64,8 @@ function ProjectAnket() {
         const method = alreadyReacted ? "DELETE" : "POST";
 
         const url = alreadyReacted
-            ? `http://localhost:5000/reactions/review/${reviewId}?emoji=${encodeURIComponent(emoji)}`
-            : `http://localhost:5000/reactions/${reviewId}`;
+            ? `${backendUrl}/reactions/review/${reviewId}?emoji=${encodeURIComponent(emoji)}`
+            : `${backendUrl}/reactions/${reviewId}`;
 
         try {
             const res = await fetch(url, {
@@ -135,7 +138,7 @@ function ProjectAnket() {
     return (
         <div className="project-details">
             <div className="project-header">
-                <img src={`http://localhost:5000${project.imageUrl}`} alt={project.title} />
+                <img src={`${backendUrl}${project.imageUrl}`} alt={project.title} />
                 <div className="project-info">
                     <h1>{project.title}</h1>
                     <p>{project.description}</p>
