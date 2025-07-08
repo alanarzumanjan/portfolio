@@ -8,6 +8,10 @@ html,
 body,
 #root {
     height: 100%;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+    white-space: normal !important;
 }
 
 .App {

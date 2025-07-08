@@ -85,7 +85,7 @@ nav a.active {
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 695px) {
     .nav {
         position: absolute;
         top: 4rem;
@@ -108,7 +108,89 @@ nav a.active {
         gap: 0.8rem;
     }
 
+    .theme-select {
+        max-width: 5rem;
+    }
+
+    header {
+        justify-content: space-between !important;
+    }
+
+    .logo {
+        margin-right: 15rem;
+    }
+
     .burger {
         display: block;
     }
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .logo {
+        margin-right: 12rem;
+    }
+}
+
+@media (max-width: 470px) {
+    .logo {
+        margin-right: 8rem;
+    }
+}
+
+@media (max-width: 408px) {
+    .logo {
+        margin-right: 6rem;
+    }
+}
+
+@media (max-width: 373px) {
+    .logo {
+        margin-right: 4rem;
+    }
+}
+
+@media (max-width: 343px) {
+    .logo {
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width: 312px) {
+    .logo {
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 250px) {
+    .logo {
+        margin-right: none;
+        padding-right: 0;
+    }
+
+    .logo h1 {
+        font-size: 1rem !important;
+    }
+
+    header {
+        gap: none;
+    }
+
+    .burger {
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 230px) {
+    .logo h1 {
+        font-size: 0.7rem !important;
+    }
+
 }
