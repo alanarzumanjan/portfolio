@@ -88,4 +88,8 @@ var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
 app.UseStaticFiles();
 app.MapHealthChecks("/health");
 app.MapControllers();
+// For Hosting:
 app.Run($"http://0.0.0.0:{port}");
+
+// For Local Testing
+// app.Run("http://localhost:5000/");

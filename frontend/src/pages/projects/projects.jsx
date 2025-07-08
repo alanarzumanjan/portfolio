@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./projects.css";
+import { Link } from "react-router-dom";
 
 function Projects() {
     const [projects, setProjects] = useState([]);
@@ -61,10 +62,10 @@ function Projects() {
 
                                     <div className="projects-buttons">
                                         {project.liveUrl && (
-                                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="projects-button">Live</a>
+                                            <Link to={project.liveUrl} target="_blank" rel="noopener noreferrer" className="projects-button">Live</Link>
                                         )}
-                                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="projects-button">Repo</a>
-                                        <a href={`/projects/${project.id}`} className="projects-button">Read more</a>
+                                        <Link to={project.githubUrl} target="_blank" rel="noopener noreferrer" className="projects-button">Repo</Link>
+                                        <Link to={`/projects/${project.id}`} className="projects-button">Read more</Link>
                                     </div>
                                 </div>
                             </div>
