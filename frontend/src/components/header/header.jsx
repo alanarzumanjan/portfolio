@@ -16,10 +16,10 @@ function Header() {
 
             <nav className={isOpen ? "nav open" : "nav"}>
                 <ul>
-                    <li><NavLink to="/home" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>
-                    <li><NavLink to="/projects" className={({ isActive }) => isActive ? "active" : ""}>Projects</NavLink></li>
-                    <li><NavLink to="/contacts" className={({ isActive }) => isActive ? "active" : ""}>Contacts</NavLink></li>
-                    <li><NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink></li>
+                    <li><NavLink to="/home" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>
+                    <li><NavLink to="/projects" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? "active" : ""}>Projects</NavLink></li>
+                    <li><NavLink to="/contacts" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? "active" : ""}>Contacts</NavLink></li>
+                    <li><NavLink to="/about" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? "active" : ""}>About</NavLink></li>
                 </ul>
             </nav>
 
