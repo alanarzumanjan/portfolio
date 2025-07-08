@@ -236,3 +236,67 @@
 .projects-button:focus {
     animation: pulse 1.2s ease-out;
 }
+
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .projects-inner {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .projects-item img {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .projects-item {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .projects h1 {
+        font-size: 2rem;
+    }
+
+    .projects-item h2 {
+        font-size: 1.1rem;
+    }
+
+    .projects-button {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .category-buttons {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-inner {
+        height: auto;
+        padding: 1rem;
+    }
+
+    /* .projects-description {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+    } */
+
+    .projects-item img {
+        height: auto;
+        max-height: 200px;
+    }
+}

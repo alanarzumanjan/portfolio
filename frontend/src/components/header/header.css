@@ -108,7 +108,23 @@ nav a.active {
         gap: 0.8rem;
     }
 
+    .theme-select {
+        max-width: 5rem;
+    }
+
+    header {
+        justify-content: space-between !important;
+        /* gap: 2rem; */
+    }
+
     .burger {
         display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        gap: 0.5rem;
     }
 }
