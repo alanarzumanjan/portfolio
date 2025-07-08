@@ -150,6 +150,8 @@ nav a.active {
         cursor: pointer;
         z-index: 1000;
         transition: transform 0.2s ease;
+        width: 45px;
+        height: 45px;
     }
 
     .burger:hover {
