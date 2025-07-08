@@ -354,7 +354,7 @@
     }
 
     .reaction-options-click {
-        left: calc(auto -2px);
+        left: -2px;
         right: 0;
         flex-wrap: wrap;
         width: max-content;
