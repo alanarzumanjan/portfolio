@@ -73,8 +73,9 @@ nav a.active {
     font-size: 1.8rem;
     background: none;
     border: none;
-    color: white;
+    /* color: white; */
     cursor: pointer;
+    width: 40px;
 }
 
 .theme-select {
@@ -91,15 +92,17 @@ nav a.active {
 @media (max-width: 695px) {
     .nav {
         position: absolute;
-        top: 4rem;
+        top: 4.5rem;
         right: 1rem;
-        background-color: #000;
+        /* background-color: #222; */
         padding: 1rem;
-        border-radius: 10px;
+        border-radius: 12px;
         display: none;
         z-index: 999;
-        width: fit-content;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        animation: slideDown 0.3s ease-out;
+        width: 180px;
+        /* 👈 зафиксированная ширина */
     }
 
     .nav.open {
@@ -107,9 +110,52 @@ nav a.active {
     }
 
     .nav ul {
+        display: flex;
         flex-direction: column;
         gap: 0.8rem;
     }
+
+    .nav a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        background-color: #a5d5f5;
+        color: #2c5aa0;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .nav a:hover {
+        background-color: #85bde0;
+        transform: scale(1.03);
+    }
+
+    .nav a.active {
+        background-color: #2c5aa0;
+        color: white;
+        font-weight: 600;
+    }
+
+    .burger {
+        display: block;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 0.2s ease;
+    }
+
+    .burger:hover {
+        transform: rotate(90deg);
+    }
+
 
     .theme-select {
         max-width: 5rem;
@@ -123,9 +169,6 @@ nav a.active {
         margin-right: 15rem;
     }
 
-    .burger {
-        display: block;
-    }
 }
 
 @media (max-width: 600px) {
@@ -196,4 +239,16 @@ nav a.active {
         font-size: 0.7rem !important;
     }
 
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
