@@ -296,3 +296,106 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 700px) {
+    .project-details {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-header img {
+        width: 60%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .project-info h1 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .project-info p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .project-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .project-reviews {
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .review-item {
+        font-size: 0.9rem;
+    }
+
+    .review-item small {
+        justify-content: flex-start;
+    }
+
+    .modal {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .reaction-options-click {
+        left: calc(auto -2px);
+        right: 0;
+        flex-wrap: wrap;
+        width: max-content;
+    }
+
+    .add-review-container {
+        justify-content: center;
+    }
+
+    .add-review-button {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .add-review-button img {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .review-reactions {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+
+    .reaction-btn {
+        font-size: 0.9rem;
+    }
+
+    .modal-close {
+        font-size: 1rem;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    .review-form input,
+    .review-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .review-form button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
