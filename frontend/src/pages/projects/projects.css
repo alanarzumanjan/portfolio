@@ -4,6 +4,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .projects {

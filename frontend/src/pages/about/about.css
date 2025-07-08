@@ -6,6 +6,9 @@
     font-family: 'Segoe UI', sans-serif;
     color: #333;
     line-height: 1.7;
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .about h1 {
