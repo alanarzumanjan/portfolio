@@ -1,6 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .home {
@@ -123,35 +126,8 @@ p {
     }
 }
 
-@media (max-width: 480px) {
-    .open-to-develop {
-        font-size: 0.95rem;
-        padding: 0.8rem;
-        max-width: 165px;
-    }
 
-    p {
-        font-size: 1rem;
-    }
-
-    .home-link {
-        width: 100%;
-        text-align: center;
-    }
-
-    .avatar-text {
-        padding-left: 2rem;
-        padding-right: 0;
-        margin-right: 0;
-    }
-
-    .home-container {
-        padding-left: 0;
-        margin-left: 1rem;
-    }
-}
-
-@media (max-width: 365px) {
+@media (max-width: 600px) {
     .home {
         display: flex;
         flex-direction: column;

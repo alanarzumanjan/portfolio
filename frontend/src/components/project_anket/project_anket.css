@@ -10,6 +10,9 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', sans-serif;
     animation: fadeIn 0.8s ease;
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .project-header {
@@ -358,6 +361,10 @@
         right: 0;
         flex-wrap: wrap;
         width: max-content;
+    }
+
+    small {
+        margin-top: 0.5rem;
     }
 
     .add-review-container {

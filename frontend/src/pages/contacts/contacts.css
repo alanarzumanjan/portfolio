@@ -1,6 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .info {
