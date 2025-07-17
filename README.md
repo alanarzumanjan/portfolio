@@ -27,6 +27,7 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 - **SQLite** — lightweight local database
 - **Entity Framework Core** — ORM for managing the data layer
 - **Swagger** — API documentation
+- **Docker** — Organize project and buildings
 
 ---
 
