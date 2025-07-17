@@ -62,7 +62,7 @@ function Contacts() {
 
 
             <div className="social-icons">
-                <a href="https://linkedin.com/in/alanarzumanjan" target="_blank" rel="noopener noreferrer" className="icon-btn">
+                <a href="https://www.linkedin.com/in/alan-arzumanjan-92811a355/" target="_blank" rel="noopener noreferrer" className="icon-btn">
                     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" />
                 </a>
 
