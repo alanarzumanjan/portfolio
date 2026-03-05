@@ -21,7 +21,7 @@ function About() {
                     <h3>Web</h3>
                     <ul>
                         <li>HTML / CSS</li>
-                        <li>JavaScript / React / Next.js</li>
+                        <li> Java/TypeScript / React / Next.js</li>
                     </ul>
                 </div>
 
@@ -106,7 +106,7 @@ function About() {
                     </ul>
 
                     <h3>Additional Experience</h3>
-                    <p>Vagrant, Nginx, PHP, AWS, — basic working knowledge.</p>
+                    <p>Vagrant, Nginx, PHP, AWS, Arduino — basic working knowledge.</p>
                 </div>
 
                 <a className="cv" href={alan_cv} download>
