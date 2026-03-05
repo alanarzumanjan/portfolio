@@ -97,7 +97,7 @@ function About() {
                             <strong>Version Control:</strong> Git Flow, GitHub Flow
                         </li>
                         <li>
-                            <strong>Backend & APIs:</strong> REST API, FastAPI
+                            <strong>Backend & APIs:</strong> REST API, FastAPI, CI/CD Pipelines
                         </li>
                         <li>
                             <strong>Algorithms:</strong> Polymorphism, Linked Lists
