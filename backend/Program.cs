@@ -59,7 +59,7 @@ if (app.Environment.IsDevelopment())
     app.UseMiddleware<SwaggerAuth>();
     app.UseSwagger();
     app.UseSwaggerUI();
-} // for swagger acces: $env:ASPNETCORE_ENVIRONMENT = "Development"
+} // for swagger acces: $env:ASPNETCORE_ENVIRONMENT = "Development" dotnet run
 
 // Apply CORS based on environment
 if (app.Environment.IsDevelopment())
