@@ -1,10 +1,10 @@
-# 🧭 Personal Portfolio — Fullstack Developer Website
+# Personal Portfolio — Fullstack Developer Website
 
 Welcome to my personal portfolio — a project designed to present my skills, projects, experience, and technical profile as a developer.
 
 ---
 
-## 📌 Project Goals
+## Project Goals
 
 - Present my CV, skillset, and experience
 - Showcase real-world pet projects
@@ -13,15 +13,15 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 
 ---
 
-## 🧱 Architecture
+## Architecture
 
-### 💻 Frontend
+### Frontend
 
 - **Next.js (React)** — modern framework for SSR/SSG
 - **JavaScrypt** — strong typing for reliability
 - **CSS** — beautiful UI components
 
-### ⚙️ Backend
+### Backend
 
 - **ASP.NET Core Web API** — REST API for projects and reviews
 - **SQLite** — lightweight local database
@@ -31,17 +31,17 @@ Welcome to my personal portfolio — a project designed to present my skills, pr
 
 ---
 
-## 🔄 API Endpoints
+## API Endpoints
 
 <img className="api" src="backend/wwwroot/api.png" alt="Avatar" height="400px" />
 
 ---
 
-## 🗃️ Database Structure
+## Database Structure
 
 <img className="api" src="backend/wwwroot/database_diagram.png" alt="Avatar" width="350px" />
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Frontend (Next.js)
 

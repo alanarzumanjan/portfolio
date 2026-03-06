@@ -2,7 +2,7 @@
 
 This is the backend for a portfolio project built with **ASP.NET Core** and **Entity Framework Core** using **SQLite** as the database. It supports project management, user reviews, emoji-based reactions, email contact form, and protected Swagger access.
 
-## 🚀 Features
+## Features
 
 - **Projects CRUD**: Add, update, delete, and list portfolio projects.
 - **Reviews**: Users can leave comments on projects.
@@ -14,7 +14,7 @@ This is the backend for a portfolio project built with **ASP.NET Core** and **En
 
 ---
 
-## 📦 Technologies
+## Technologies
 
 - ASP.NET Core
 - Entity Framework Core (EF Core)
@@ -25,7 +25,7 @@ This is the backend for a portfolio project built with **ASP.NET Core** and **En
 
 ---
 
-## 📁 Project Structure (MVC)
+## Project Structure (MVC)
 
 - `Controllers/`: API controllers for Projects, Reviews, Reactions, and Contacts.
 - `Models/`: Entity and DTO classes.
@@ -35,7 +35,7 @@ This is the backend for a portfolio project built with **ASP.NET Core** and **En
 
 ---
 
-## 🛠️ Setup & Run
+## Setup & Run
 
 1. **Clone the repository**:
 
@@ -69,7 +69,7 @@ This is the backend for a portfolio project built with **ASP.NET Core** and **En
 
 ---
 
-## 📮 Contact Endpoint
+## Contact Endpoint
 
 **POST /Contacts**
 
@@ -85,20 +85,20 @@ Sends an email to your configured Gmail inbox.
 
 ---
 
-## 🔐 Swagger Authentication
+## Swagger Authentication
 
 Basic Authentication is enabled for `/swagger`. Use credentials from `.env`.
 
 ---
 
-## 🧪 Health Check
+## Health Check
 
 **GET /health**  
 Returns `200 OK` if the database is reachable.
 
 ---
 
-## 📌 Notes
+## Notes
 
 - Ensure the `.env` file **does not contain comments or spaces** that could break parsing.
 - Make sure your **Google Account has "App Passwords" enabled** if you're using Gmail.
@@ -106,10 +106,9 @@ Returns `200 OK` if the database is reachable.
 
 ---
 
-## 🧹 To Do
+## To Do
 
 - Add logging to file
-- Add pagination or filtering for projects
 - Unit tests and CI
 
 ---
