@@ -35,7 +35,7 @@ function Projects() {
             <h1>Projects</h1>
 
             {loading ? (
-                <p>Loading...</p>
+                <p>Loading... Wait a bit and reload page</p>
             ) : (
                 <>
                     <div className="category-buttons">
